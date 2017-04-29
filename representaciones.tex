@@ -166,6 +166,25 @@ Cada rotación se descompone únicamente en tres ángulos de Euler:
   \end{pmatrix}
 \]
 
+% https://es.wikipedia.org/wiki/Teorema_de_rotaci%C3%B3n_de_Euler
+
+
+\section{Aplicación en gráficos}
+
+\subsection{Spherical Linear Interpolation (SLERP)}
+
+El método \textbf{SLERP} (Spherical Lineal Interpolation) permite interpolar
+un punto entre dos orientaciones de manera continua. Dadas dos orientaciones
+$q_1,q_2$ representadas como cuaterniones, un punto $p$ y un parámetro de
+interpolación $t$, buscamos un camino continuo que interpole $p$ desde $q_1$,
+cuando $t=0$, hasta $q_2$, cuando $t=1$.
+
+Para calcular la rotación interpolada, usamos la fórmula
+
+\[q' = q_1(q_1^{-1}q_2)^t\]
+
+\subsection{Spherical and Quadrangle (SQUAD)}
+
 
 
 \section{Referencias}
