@@ -15,8 +15,10 @@
 %-----------------------------------------------------------------------------------------------------
 
 \documentclass{article}
-
 \usepackage{lipsum}                     % Texto dummy. Quitar en el documento final.
+
+
+
 
 %-----------------------------------------------------------------------------------------------------
 %	SELECCIÓN DEL LENGUAJE
@@ -27,11 +29,29 @@
 \usepackage[utf8]{inputenc}                                    % Permite los acentos.
 \selectlanguage{spanish}                                       % Selecciono como lenguaje el Español.
 
-%-----------------------------------------------------------------------------------------------------
-%	SELECCIÓN DE LA FUENTE
-%-----------------------------------------------------------------------------------------------------
 
+% ----
+% Matemáticas
+% ----
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{tikz-cd}
+\theoremstyle{plain}
+\newtheorem{theorem}{Teorema}
+\newtheorem{proposition}{Proposición}
+\newtheorem{lemma}{Lema}
+\newtheorem{corollary}{Corolario}
+\theoremstyle{definition}
+\newtheorem{definition}{Definición}
+\theoremstyle{remark}
+\newtheorem*{remark}{Nota}
+
+\renewcommand*{\proofname}{Demostración}
+
+
+% ----
 % Fuente utilizada.
+% ----
 \usepackage{courier}                    % Fuente Courier.
 \usepackage{microtype}                  % Mejora la letra final de cara al lector.
 
