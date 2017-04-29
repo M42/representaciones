@@ -15,24 +15,14 @@
 %-----------------------------------------------------------------------------------------------------
 
 \documentclass{article}
-\usepackage{lipsum}                     % Texto dummy. Quitar en el documento final.
+
+% Lenguaje
+\usepackage[spanish,es-noquoting, es-tabla, es-lcroman]{babel}
+\usepackage[utf8]{inputenc}
+\selectlanguage{spanish}
 
 
-
-
-%-----------------------------------------------------------------------------------------------------
-%	SELECCIÓN DEL LENGUAJE
-%-----------------------------------------------------------------------------------------------------
-
-% Paquetes para adaptar Látex al Español:
-\usepackage[spanish,es-noquoting, es-tabla, es-lcroman]{babel} % Cambia
-\usepackage[utf8]{inputenc}                                    % Permite los acentos.
-\selectlanguage{spanish}                                       % Selecciono como lenguaje el Español.
-
-
-% ----
 % Matemáticas
-% ----
 \usepackage{amsthm}
 \usepackage{amsmath}
 \usepackage{tikz-cd}
@@ -45,20 +35,17 @@
 \newtheorem{definition}{Definición}
 \theoremstyle{remark}
 \newtheorem*{remark}{Nota}
-
 \renewcommand*{\proofname}{Demostración}
 
 
-% ----
-% Fuente utilizada.
-% ----
-\usepackage{courier}                    % Fuente Courier.
-\usepackage{microtype}                  % Mejora la letra final de cara al lector.
+% Fuente
+\usepackage{courier}
+\usepackage{microtype}
 
-%-----------------------------------------------------------------------------------------------------
-%	ESTILO DE PÁGINA
-%-----------------------------------------------------------------------------------------------------
 
+% ----
+% Estilo de página
+%----
 % Paquetes para el diseño de página:
 \usepackage{fancyhdr}               % Utilizado para hacer títulos propios.
 \usepackage{lastpage}               % Referencia a la última página. Utilizado para el pie de página.
@@ -100,28 +87,21 @@
 \rfoot{Página\ \thepage\ de\ \protect\pageref{LastPage}} % Parte derecha.
 
 
-%-----------------------------------------------------------------------------------------------------
-%	PORTADA
-%-----------------------------------------------------------------------------------------------------
+% ----
+% PORTADA
+% ----
 
 % Elija uno de los siguientes formatos.
 % No olvide incluir los archivos .sty asociados en el directorio del documento.
 \usepackage{title1}
 %\usepackage{title2}
 
-%-----------------------------------------------------------------------------------------------------
-%	TÍTULO, AUTOR Y OTROS DATOS DEL DOCUMENTO
-%-----------------------------------------------------------------------------------------------------
 
-% Título del documento.
+% Título y autores
 \newcommand{\doctitle}{Aplicaciones de caracteres}
-% Subtítulo.
 \newcommand{\docsubtitle}{}
-% Fecha.
 \newcommand{\docdate}{1 \ de \ Enero \ de \ 2015}
-% Asignatura.
 \newcommand{\subject}{Representaciones}
-% Autor.
 \newcommand{\docauthor}{D. Charte, J.C. Entrena, L. Soto, M. Román}
 \newcommand{\docaddress}{Universidad de Granada}
 \newcommand{\docemail}{}
