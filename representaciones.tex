@@ -153,16 +153,29 @@
 
 \section{Primera Sección}
 
-\lipsum[1]
+\subsection{El grupo de rotación SO(3)}
+
+\begin{definition}
+  Llamamos $O(n)$ al grupo de las \textbf{matrices ortogonales}
+  de dimensiones $n \times n$, aquellas que cumplen que $Q^TQ = QQ^T = I$,
+  bajo la composición.
+\end{definition}
+
+Nótese que las matrices ortogonales forman un subgrupo del grupo
+lineal $GL(n)$ de matrices invertibles; y que, por definición, sólo
+pueden tener determinante $1$ y $-1$.
+
+\begin{definition}
+  Llamamos $SO(n)$ al \textbf{subgrupo de rotaciones}, definido como
+  el subgrupo de $O(n)$ formado por aquellas matrices que tienen
+  determinante $1$.
+\end{definition}
 
 \section{Segunda Sección}
 
-	\subsection{Primera subsección}
-
-		\lipsum[1]
-
-	\subsection{Segunda subsección}
-
-		\lipsum[2]
+\section{Referencias}
+% https://en.wikipedia.org/wiki/Euler_angles
+% https://en.wikipedia.org/wiki/Gimbal_lock
+% https://en.wikipedia.org/wiki/Rotation_group_SO(3)
 
 \end{document}
