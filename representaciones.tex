@@ -24,6 +24,7 @@
 
 % Matemáticas
 \usepackage{amsthm}
+\usepackage{amsfonts}
 \usepackage{amsmath}
 \usepackage{tikz-cd}
 \theoremstyle{plain}
@@ -139,14 +140,41 @@ pueden tener determinante $1$ y $-1$.
 % DESARROLLAR:
 % Cada rotación deja fija una recta
 
+\begin{proposition}
+	Cada rotación de $SO(3)$ deja fija una recta.
+\end{proposition}
+
+\begin{proofname}\\
+%	Sea $ M \in SO(3)$ una rotación. Queremos ver que la matriz tiene al menos un vector propio.
+%	Consideramos $p(\lambda) = det(M - \lambda I_3)$ el polinomio característico de $M$. Por ser
+%	de grado 3, tiene al menos una solución en $\mathbb R$, a la que llamamos $\lambda_1$
+\end{proofname}
+
 % DESARROLLLAR:
 % SO(3), como grupo de Lie, es difeomorfo a RP^3.
 
 
 \section{Ángulos de Euler}
 \subsection{Definición}
+
+Los ángulos de Euler son tres ángulos utilizados para describir la orientación de un objeto respecto a un sistema
+coordenadas fijo en el espacio. Análogamente, podemos no considerar como fijo el sistema de coordenadas y ver
+los ángulos de Euler como una orientación de dicho sistema.
+
+La forma tradicional de usar rotaciones en el espacio se basa en el uso de las llamadas rotaciones de Euler,
+que combinan hasta tres rotaciones sobre los ejes cartesianos, donde la única restricción es que no puede
+haber dos rotaciones sobre el mismo eje contiguas, pues derivarían en una.
+
+Las tres rotaciones sobre los ejes cartesianos se pueden combinar de 12 formas distintas, consistentes en
+las 6 ordenaciones posibles usando los tres índices, además de aquellas seis en las que aparece el mismo
+eje al principio y al final, y uno de los dos restantes en la posición central.
+
+
 \subsection{Descomposición}
-Cada rotación se descompone únicamente en tres ángulos de Euler. En este ejemplo, utilizamos las rotaciones sobre los ejes cartesianos en el espacio, de forma que la primera es la rotación de ángulo $\psi$ sobre el eje $z$, la segunda rota $\phi$ grados sobre el eje $y$, y la tercera la que rota $\theta$ grados con respecto al eje $x$. Las tres rotaciones están consideradas en sentido antihorario. 
+Cada rotación se descompone en sus tres ángulos de Euler de forma única. Vemos las matrices de rotación
+respecto a los ejes cartesianos, de forma que la primera es la rotación de ángulo $\psi$ sobre el
+eje $z$, la segunda rota $\phi$ grados sobre el eje $y$, y la tercera la que rota $\theta$ grados con respecto
+al eje $x$. Las tres rotaciones están consideradas en sentido antihorario.\footnote{Para cambiar el sentido no hay más que cambiarle el signo a los senos}
 
 \[\begin{pmatrix}
     \cos \psi & -\sin \psi & 0 \\
@@ -162,8 +190,6 @@ Cada rotación se descompone únicamente en tres ángulos de Euler. En este ejem
     0 & \sin \theta & \cos \theta
   \end{pmatrix}
 \]
-
-
 
 % https://es.wikipedia.org/wiki/Teorema_de_rotaci%C3%B3n_de_Euler
 
