@@ -116,9 +116,7 @@
 \tableofcontents
 \newpage
 
-
-\section{Cuaternios}
-
+\section{El grupo de rotación}
 \subsection{El grupo de rotación SO(3)}
 
 \begin{definition}
@@ -144,11 +142,10 @@ pueden tener determinante $1$ y $-1$.
 % DESARROLLLAR:
 % SO(3), como grupo de Lie, es difeomorfo a RP^3.
 
-\subsection{Conexión con SU(2)}
-\cite{gelfand63}
-% https://en.wikipedia.org/wiki/Rotation_group_SO(3)#Connection_between_SO.283.29_and_SU.282.29
 
-\subsection{Ángulos de Euler}
+\section{Ángulos de Euler}
+\subsection{Definición}
+\subsection{Descomposición}
 Cada rotación se descompone únicamente en tres ángulos de Euler. En este ejemplo, utilizamos las rotaciones sobre los ejes cartesianos en el espacio, de forma que la primera es la rotación de ángulo $\psi$ sobre el eje $z$, la segunda rota $\phi$ grados sobre el eje $y$, y la tercera la que rota $\theta$ grados con respecto al eje $x$. Las tres rotaciones están consideradas en sentido antihorario. 
 
 \[\begin{pmatrix}
@@ -170,11 +167,21 @@ Cada rotación se descompone únicamente en tres ángulos de Euler. En este ejem
 
 % https://es.wikipedia.org/wiki/Teorema_de_rotaci%C3%B3n_de_Euler
 
+\subsection{Bloqueo del cardán}
+\subsection{Recubrimiento del grupo de rotaciones}
+
+
+\section{Cuaternios}
+\subsection{Conexión con SU(2)}
+\cite{gelfand63}
+% https://en.wikipedia.org/wiki/Rotation_group_SO(3)#Connection_between_SO.283.29_and_SU.282.29
+
+\subsection{Recubrimiento del grupo de rotaciones}
+
 
 \section{Aplicación en gráficos}
 
 \subsection{Spherical Linear Interpolation (SLERP)}
-
 El método \textbf{SLERP} (Spherical Lineal Interpolation) permite interpolar
 un punto entre dos orientaciones de manera continua. Dadas dos orientaciones
 $q_1,q_2$ representadas como cuaterniones, un punto $p$ y un parámetro de
@@ -186,7 +193,6 @@ Para calcular la rotación interpolada, usamos la fórmula
 \[q' = q_1(q_1^{-1}q_2)^t\]
 
 \subsection{Spherical and Quadrangle (SQUAD)}
-
 
 
 \section{Referencias}
