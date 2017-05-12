@@ -198,6 +198,19 @@ al eje $x$. Las tres rotaciones están consideradas en sentido antihorario.\foot
 % https://es.wikipedia.org/wiki/Teorema_de_rotaci%C3%B3n_de_Euler
 
 \subsection{Bloqueo del cardán}
+
+El principal problema del uso de los ángulos de Euler es el llamado \textit{bloqueo del cardán}. Este fenómeno
+consiste en la pérdida de un grado de libertad a la hora de rotar, debida a la alineación de dos de los ejes
+de rotación. Esto ocurre cuando se dan ciertas combinaciones en los ángulos de rotación, provocando dicho alineamiento.
+
+Formalmente, el bloqueo del cardán ocurre debido a que el espacio de ángulos de Euler, que podemos representar con el 3-toro
+$\mathbb T^3$, no puede ser recubridor del espacio de rotaciones, que se identifica con $\mathbb{RP}^3$. Esto puede verse
+fácilmente tomando los grupos fundamentales de ambos espacios. Mientras que el grupo fundamental del 3-toro es
+$\pi(\mathbb T^3, x) \simeq \mathbb Z^3$, el grupo fundamental del 3-espacio proyectivo es $\pi(\mathbb{RP}^3, x)
+\simeq \mathbb Z_2$. Como el grupo fundamental de un recubridor debe ser subgrupo del grupo fundamental del espacio
+reducido, deducimos que no puede haber un recubrimiento. De hecho, como $Z_2$ no tiene subgrupos propios, los posibles
+espacios recubridores deben tener grupo fundamental $Z_2$ o ser simplemente conexos.
+
 \subsection{Recubrimiento del grupo de rotaciones}
 
 
