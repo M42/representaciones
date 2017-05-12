@@ -145,10 +145,14 @@ pueden tener determinante $1$ y $-1$.
 \end{proposition}
 
 \begin{proofname}\\
-%	Sea $ M \in SO(3)$ una rotación. Queremos ver que la matriz tiene al menos un vector propio.
-%	Consideramos $p(\lambda) = det(M - \lambda I_3)$ el polinomio característico de $M$. Por ser
-%	de grado 3, tiene al menos una solución en $\mathbb R$, a la que llamamos $\lambda_1$
+	Sea $ M \in SO(3)$ una rotación. Queremos ver que la matriz tiene al $1$ como valor propio, lo que equivale a que
+	$ det(M - I_3) = 0$.
+	\[ det(M - I_3) = det((M - I_3)^t) ) det(M^t - I_3) = det(M^{-1} - I_3) = \]
+	\[= det(M^{-1}(I_3 - M)) = det(M^{-1}) * det(I_3 - M) = det(I_3 - M) = -det(M - I_3) \]
+
+	de donde se deduce directamente que $det(M - I_3) = 0$ y que el $1$ es un autovalor de M.
 \end{proofname}
+
 
 % DESARROLLLAR:
 % SO(3), como grupo de Lie, es difeomorfo a RP^3.
