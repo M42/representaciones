@@ -1,14 +1,18 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 
-
+Project("{3743AF16-7C53-361D-7954-05561FAAC2B2}") = "Quaternion", "Assembly-CSharp.csproj", "{E5E890E8-5BD0-D89C-491F-4BF75887B5C7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-
+		{E5E890E8-5BD0-D89C-491F-4BF75887B5C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5E890E8-5BD0-D89C-491F-4BF75887B5C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5E890E8-5BD0-D89C-491F-4BF75887B5C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5E890E8-5BD0-D89C-491F-4BF75887B5C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
