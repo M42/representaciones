@@ -355,6 +355,16 @@ Para calcular la rotación interpolada, usamos la fórmula
 
 \[q' = q_1(q_1^{-1}q_2)^t\]
 
+Cuando interpolamos usando SLERP, la interpolación de cuaternios induce a
+su vez una interpolación en las rotaciones tridimensionales, que nos dará
+una rotación con velocidad angular uniforme y alrededor de un eje fijo.
+% Por qué? https://en.wikipedia.org/wiki/Slerp#Quaternion_Slerp
+
+Sin embargo, como el recubrimiento es doble, el camino de rotaciones puede
+ser doble y ser o bien el camino más corto, o bien el camino más largo.
+
+% http://number-none.com/product/Understanding%20Slerp,%20Then%20Not%20Using%20It/
+
 \subsection{Spherical and Quadrangle (SQUAD)}
 
 
