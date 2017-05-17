@@ -5,8 +5,15 @@ var selectionColor : Color;
 private var gameobject : GameObject;
 private var lastColor : Color;
 private var mouseScreenPoint : Vector3;
-private var offset : Vector3;
+private var rayHit : RaycastHit;
+//private var offset : Vector3;
+var xRotor : GameObject;
+var yRotor : GameObject;
+var zRotor : GameObject;
 
+var xRotation : Quaternion;
+var yRotation : Quaternion;
+var zRotation : Quaternion;
 
 function Start(){
     Cursor.visible = true;
@@ -14,7 +21,6 @@ function Start(){
 
 function Update(){
     ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-    var rayHit : RaycastHit;
 
     if(Input.GetMouseButtonDown(0)){
         Cursor.visible = false;
@@ -27,22 +33,28 @@ function Update(){
                 mouseScreenPoint = Input.mousePosition;
             }
         }
+
+        xRotor.transform.rotation = xRotation;
+        yRotor.transform.rotation = yRotation;
+        zRotor.transform.rotation = zRotation;
     } else if(Input.GetMouseButton(0)){
         var new_mouseScreenPoint = Input.mousePosition;
         var rotate_angle = new_mouseScreenPoint - mouseScreenPoint;
-        Debug.Log(rotate_angle.y);
+        var foo = zRotor.transform.rotation.z;
+        //Debug.Log(rotate_angle.y);
 
-        if(gameobject.name == "X"){
-            Debug.Log(gameobject.transform.rotation);
-            gameobject.transform.rotation = Quaternion.Euler(rotate_angle.y,0,90);
+        if(gameobject.name == xRotor.name){
+            Debug.Log("X: "+xRotor.transform.rotation);
+            xRotor.transform.rotation = xRotation = Quaternion.Euler(rotate_angle.y,0,90);
         } 
-        else if(gameobject.name == "Y"){
-            Debug.Log(gameobject.transform.rotation);
-            gameobject.transform.rotation = Quaternion.Euler(0,rotate_angle.y,0);
+        else if(gameobject.name == yRotor.name){
+            Debug.Log("Y: "+yRotor.transform.rotation);
+            yRotor.transform.rotation = yRotation = Quaternion.Euler(0,rotate_angle.y,0);
         } 
-        else if(gameobject.name == "Z"){
-            Debug.Log(gameobject.transform.rotation);
-            gameobject.transform.rotation = Quaternion.Euler(90,0,rotate_angle.y);
+        else if(gameobject.name == zRotor.name){
+        	Debug.Log(foo);
+            Debug.Log("Z: "+zRotor.transform.rotation);
+            zRotor.transform.rotation = zRotation = Quaternion.Euler(90,0,0)*Quaternion.Euler(0,rotate_angle.y,0);
 
         }
     }

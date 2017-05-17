@@ -1,7 +1,7 @@
+﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2008
-
-Project("{3743AF16-7C53-361D-7954-05561FAAC2B2}") = "Quaternion", "Assembly-CSharp.csproj", "{E5E890E8-5BD0-D89C-491F-4BF75887B5C7}"
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quaternion", "Assembly-CSharp.csproj", "{E5E890E8-5BD0-D89C-491F-4BF75887B5C7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
