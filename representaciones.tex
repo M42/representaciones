@@ -136,26 +136,45 @@ pueden tener determinante $1$ y $-1$.
   determinante $1$.
 \end{definition}
 
+Vamos a considerar $SO(3)$, las rotaciones sobre el origen de $\mathbb R^3$, pues son laz que nos interesan en este caso.
+Vamos a ver un resultado sobre la topología de este grupo.
 
-% DESARROLLAR:
-% Cada rotación deja fija una recta
+\begin{proposition}
+	$SO(3)$ es homeomorfo a $\mathbb{RP}^3$
+\end{proposition}
+
+\begin{proofname}\\
+	Consideramos una esfera en $\mathbb R^3$ de radio $\pi$, $\mathbb B = B(0, \pi)$. Asignamos a cada punto $x \in \mathbb B$
+	una rotación, con eje la recta que une el origen y $x$, y ángulo de rotación $\alpha = d(x, O)$ la distancia con signo al
+	origen. De esta forma, cada	punto representa una única rotación, salvo los puntos antípoda, a los que corresponden las
+	rotaciones de ángulos $\pi$ y $-\pi$, que son la misma. Esto nos lleva a identificar los puntos antípoda de $\partial \mathbb B$,
+	lo que establece un homeomorfismo entre $SO(3)$ y $\mathbb{RP}^3$. $\qed$
+\end{proofname}
+
+
+\begin{remark}
+	De hecho, por ser $\mathbb B$ una variedad diferenciable $\mathbb{C^{\infty}}$, el homeomorfismo es un difeomorfismo.
+\end{remark}
+
+En cada rotación existe una recta invariante, cuyos puntos se mantienen fijos tras aplicarse la rotación.
+Llamaremos a esta recta el eje de rotación, y vamos a ver que siempre existe.
+
 
 \begin{proposition}
 	Cada rotación de $SO(3)$ deja fija una recta.
 \end{proposition}
 
 \begin{proofname}\\
-	Sea $ M \in SO(3)$ una rotación. Queremos ver que la matriz tiene al $1$ como valor propio, lo que equivale a que
-	$ det(M - I_3) = 0$.
+	Sea $ M \in SO(3)$ una rotación. Queremos ver que la matriz tiene al $1$ como valor propio, que nos dará un subespacio
+	de al menos dimensión 1 cuyos puntos se mantienen fijos por $M$.
+
+	Que el $1$ sea valor propio equivale a que $ det(M - I_3) = 0$. Desarrollamos la expresión sabiendo que $M^t = M^{-1}$
+
 	\[ det(M - I_3) = det((M - I_3)^t) ) det(M^t - I_3) = det(M^{-1} - I_3) = \]
 	\[= det(M^{-1}(I_3 - M)) = det(M^{-1}) * det(I_3 - M) = det(I_3 - M) = -det(M - I_3) \]
 
-	de donde se deduce directamente que $det(M - I_3) = 0$ y que el $1$ es un autovalor de M.
+	de donde se deduce directamente que $det(M - I_3) = 0$ y que el $1$ es un autovalor de M. $\qed$
 \end{proofname}
-
-
-% DESARROLLLAR:
-% SO(3), como grupo de Lie, es difeomorfo a RP^3.
 
 
 \section{Ángulos de Euler}
@@ -195,6 +214,9 @@ al eje $x$. Las tres rotaciones están consideradas en sentido antihorario.\foot
   \end{pmatrix}
 \]
 
+Podemos ver el espacio de los ángulos de Euler como el 3-toro $\mathbb T^3$, sin más que identificar cada variable de giro
+en una dimensión del toro.
+
 % https://es.wikipedia.org/wiki/Teorema_de_rotaci%C3%B3n_de_Euler
 
 \subsection{Bloqueo del cardán}
@@ -203,16 +225,13 @@ El principal problema del uso de los ángulos de Euler es el llamado \textit{blo
 consiste en la pérdida de un grado de libertad a la hora de rotar, debida a la alineación de dos de los ejes
 de rotación. Esto ocurre cuando se dan ciertas combinaciones en los ángulos de rotación, provocando dicho alineamiento.
 
-Formalmente, el bloqueo del cardán ocurre debido a que el espacio de ángulos de Euler, que podemos representar con el 3-toro
-$\mathbb T^3$, no puede ser recubridor del espacio de rotaciones, que se identifica con $\mathbb{RP}^3$. Esto puede verse
+Formalmente, el bloqueo del cardán ocurre debido a que el espacio de ángulos de Euler, representados con $\mathbb T^3$,
+no puede ser recubridor del espacio de rotaciones, que se identifica con $\mathbb{RP}^3$. Esto puede verse
 fácilmente tomando los grupos fundamentales de ambos espacios. Mientras que el grupo fundamental del 3-toro es
 $\pi(\mathbb T^3, x) \simeq \mathbb Z^3$, el grupo fundamental del 3-espacio proyectivo es $\pi(\mathbb{RP}^3, x)
 \simeq \mathbb Z_2$. Como el grupo fundamental de un recubridor debe ser subgrupo del grupo fundamental del espacio
 reducido, deducimos que no puede haber un recubrimiento. De hecho, como $Z_2$ no tiene subgrupos propios, los posibles
 espacios recubridores deben tener grupo fundamental $Z_2$ o ser simplemente conexos.
-
-\subsection{Recubrimiento del grupo de rotaciones}
-
 
 \section{Cuaternios}
 \subsection{Conexión con SU(2)}
