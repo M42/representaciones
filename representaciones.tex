@@ -156,6 +156,10 @@ Vamos a ver un resultado sobre la topología de este grupo.
 	De hecho, por ser $\mathbb B$ una variedad diferenciable $\mathbb{C^{\infty}}$, el homeomorfismo es un difeomorfismo.
 \end{remark}
 
+De este resultado se deduce que $SO(3)$ es conexo, pero no es simplemente conexo, pues su grupo fundamental no es trivial.
+
+
+
 En cada rotación existe una recta invariante, cuyos puntos se mantienen fijos tras aplicarse la rotación.
 Llamaremos a esta recta el eje de rotación, y vamos a ver que siempre existe.
 
@@ -276,12 +280,12 @@ esfera tridimensional en $\mathbb{R}^4$.
 
 \begin{theorem}
   Cada matriz en $SU(2)$ puede escribirse como
-  
+
   \[\begin{pmatrix}
       a+bi & c+di \\
       -c+di & a-bi
     \end{pmatrix}\]
-  
+
   donde $a,b,c,d \in \mathbb{R}$ y $a^2+b^2+c^2+d^2 = 1$.
 \end{theorem}
 \begin{proof}
@@ -300,7 +304,7 @@ esfera tridimensional en $\mathbb{R}^4$.
     \item $\alpha\delta-\beta\gamma = 1$
     \item $\alpha\overline{\gamma} + \beta\overline{\delta} = 0$
   \end{itemize}
-   
+
   y que se resuelven con $\alpha = \overline{\delta}$ y
   $\beta = -\overline{\gamma}$; mientras que la primera condición
   nos da la condición $a^2+b^2+c^2+d^2 = 1$.
@@ -308,8 +312,16 @@ esfera tridimensional en $\mathbb{R}^4$.
 
 
 \subsection{Cuaternios como esfera de dimensión 4}
+
+
 \subsection{Recubrimiento del grupo de rotaciones}
 
+A diferencia del caso de los ángulos de Euler, los cuaternios unitales sí son un recubrimiento del espacio de rotaciones
+$SO(3)$. Esto se deduce directamente del hecho de que $S^3$ es un recubridor de dos hojas de $\mathbb{RP}^3$ (de hecho,
+es su recubridor universal).
+
+Al ser recubridor de dos hojas, tenemos que los cuaternios que se identifican por la relación de equivalencia de $\mathbb{RP}^3$
+representan la misma rotación, pues van al mismo elemento por la aplicación recubridora. En este caso, son los cuaternios opuestos. 
 
 \section{Aplicación en gráficos}
 
