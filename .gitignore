@@ -7,4 +7,6 @@
 *.fls
 *.fdb_latexmk
 *.pdf
+\#*
+.\#*
 ltximg/*
