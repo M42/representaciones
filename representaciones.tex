@@ -222,7 +222,7 @@ real tridimensional de base $i,j,k$, siendo equivalente a la
 definición
 
 \[
-  V = \left\{ v \in D \mid v^2 < 0 \right\}
+  V = \left\{ v \in \mathbb{H} \mid v^2 < 0 \right\}
 \]
 
 Los cuaternios unitarios, en particular, pueden escribirse como
@@ -303,6 +303,19 @@ esfera tridimensional en $\mathbb{R}^4$.
     \exp(q) =  1 + q + \frac{q^2}{2!} + \frac{q^3}{3!} + \dots + \frac{q^n}{n!} + \dots .
   \]
 \end{definition}
+
+Si escribimos los cuaternios como versores, $q = \cos \theta + v \sin \theta$, tendremos que
+como $v^2 = -1$, se cumple la fórmula de Euler para cualquier $\theta \in \mathbb{R}$ como
+
+\[
+\exp(\theta v) = \cos \theta + v \sin \theta = q,
+\]
+
+y por tanto podemos calcular la exponente de un cuaternio como
+
+\[
+  q^t = \exp(t \theta v) = \cos (t \theta) + v \sin (t \theta).
+\]
 
 \subsection{Spherical Linear Interpolation (SLERP)}
 El método \textbf{SLERP} (Spherical Lineal Interpolation) permite interpolar
