@@ -184,24 +184,33 @@ Llamaremos a esta recta el eje de rotación, y vamos a ver que siempre existe.
 \section{Ángulos de Euler}
 \subsection{Definición}
 
-Los ángulos de Euler son tres ángulos utilizados para describir la orientación de un objeto respecto a un sistema
-coordenadas fijo en el espacio. Análogamente, podemos no considerar como fijo el sistema de coordenadas y ver
-los ángulos de Euler como una orientación de dicho sistema.
+Los ángulos de Euler son tres ángulos utilizados para describir la
+orientación de un objeto respecto a un sistema coordenadas fijo en el
+espacio. Análogamente, podemos no considerar como fijo el sistema de
+coordenadas y ver los ángulos de Euler como una orientación de dicho
+sistema.
 
-La forma tradicional de usar rotaciones en el espacio se basa en el uso de las llamadas rotaciones de Euler,
-que combinan hasta tres rotaciones sobre los ejes cartesianos, donde la única restricción es que no puede
-haber dos rotaciones sobre el mismo eje contiguas, pues derivarían en una.
+La forma tradicional de usar rotaciones en el espacio se basa en el
+uso de las llamadas rotaciones de Euler, que combinan hasta tres
+rotaciones sobre los ejes cartesianos, donde la única restricción es
+que no puede haber dos rotaciones sobre el mismo eje contiguas, pues
+derivarían en una.
 
-Las tres rotaciones sobre los ejes cartesianos se pueden combinar de 12 formas distintas, consistentes en
-las 6 ordenaciones posibles usando los tres índices, además de aquellas seis en las que aparece el mismo
-eje al principio y al final, y uno de los dos restantes en la posición central.
+Las tres rotaciones sobre los ejes cartesianos se pueden combinar de
+12 formas distintas, consistentes en las 6 ordenaciones posibles
+usando los tres índices, además de aquellas seis en las que aparece el
+mismo eje al principio y al final, y uno de los dos restantes en la
+posición central.
 
 
 \subsection{Descomposición}
-Cada rotación se descompone en sus tres ángulos de Euler de forma única. Vemos las matrices de rotación
-respecto a los ejes cartesianos, de forma que la primera es la rotación de ángulo $\psi$ sobre el
-eje $z$, la segunda rota $\phi$ grados sobre el eje $y$, y la tercera la que rota $\theta$ grados con respecto
-al eje $x$. Las tres rotaciones están consideradas en sentido antihorario.\footnote{Para cambiar el sentido no hay más que cambiarle el signo a los senos}
+Cada rotación se descompone en sus tres ángulos de Euler de forma
+única. Vemos las matrices de rotación respecto a los ejes cartesianos,
+de forma que la primera es la rotación de ángulo $\psi$ sobre el eje
+$z$, la segunda rota $\phi$ grados sobre el eje $y$, y la tercera la
+que rota $\theta$ grados con respecto al eje $x$. Las tres rotaciones
+están consideradas en sentido antihorario.
+\footnote{Para cambiar el sentido no hay más que cambiarle el signo a los senos}
 
 \[\begin{pmatrix}
     \cos \psi & -\sin \psi & 0 \\
@@ -218,24 +227,34 @@ al eje $x$. Las tres rotaciones están consideradas en sentido antihorario.\foot
   \end{pmatrix}
 \]
 
-Podemos ver el espacio de los ángulos de Euler como el 3-toro $\mathbb T^3$, sin más que identificar cada variable de giro
-en una dimensión del toro.
+Podemos ver el espacio de los ángulos de Euler como el 3-toro
+$\mathbb T^3$, sin más que identificar cada variable de giro en una
+dimensión del toro.
 
 % https://es.wikipedia.org/wiki/Teorema_de_rotaci%C3%B3n_de_Euler
 
 \subsection{Bloqueo del cardán}
 
-El principal problema del uso de los ángulos de Euler es el llamado \textit{bloqueo del cardán}. Este fenómeno
-consiste en la pérdida de un grado de libertad a la hora de rotar, debida a la alineación de dos de los ejes
-de rotación. Esto ocurre cuando se dan ciertas combinaciones en los ángulos de rotación, provocando dicho alineamiento.
+El principal problema del uso de los ángulos de Euler es el llamado
+\textit{bloqueo del cardán}. Este fenómeno consiste en la pérdida de
+un grado de libertad a la hora de rotar, debida a la alineación de dos
+de los ejes de rotación. Esto ocurre cuando se dan ciertas
+combinaciones en los ángulos de rotación, provocando dicho
+alineamiento.
 
-Formalmente, el bloqueo del cardán ocurre debido a que el espacio de ángulos de Euler, representados con $\mathbb T^3$,
-no puede ser recubridor del espacio de rotaciones, que se identifica con $\mathbb{RP}^3$. Esto puede verse
-fácilmente tomando los grupos fundamentales de ambos espacios. Mientras que el grupo fundamental del 3-toro es
-$\pi(\mathbb T^3, x) \simeq \mathbb Z^3$, el grupo fundamental del 3-espacio proyectivo es $\pi(\mathbb{RP}^3, x)
-\simeq \mathbb Z_2$. Como el grupo fundamental de un recubridor debe ser subgrupo del grupo fundamental del espacio
-reducido, deducimos que no puede haber un recubrimiento. De hecho, como $Z_2$ no tiene subgrupos propios, los posibles
-espacios recubridores deben tener grupo fundamental $Z_2$ o ser simplemente conexos.
+Formalmente, el bloqueo del cardán ocurre debido a que el espacio de
+ángulos de Euler, representados con $\mathbb T^3$, no puede ser
+recubridor del espacio de rotaciones, que se identifica con
+$\mathbb{RP}^3$. Esto puede verse fácilmente tomando los grupos
+fundamentales de ambos espacios. Mientras que el grupo fundamental del
+3-toro es $\pi(\mathbb T^3, x) \simeq \mathbb Z^3$, el grupo
+fundamental del 3-espacio proyectivo es
+$\pi(\mathbb{RP}^3, x) \simeq \mathbb Z_2$. Como el grupo fundamental
+de un recubridor debe ser subgrupo del grupo fundamental del espacio
+reducido, deducimos que no puede haber un recubrimiento. De hecho,
+como $Z_2$ no tiene subgrupos propios, los posibles espacios
+recubridores deben tener grupo fundamental $Z_2$ o ser simplemente
+conexos.
 
 \section{Cuaternios}
 \subsection{Versores}
@@ -316,57 +335,77 @@ esfera tridimensional en $\mathbb{R}^4$.
 
 \subsection{Recubrimiento del grupo de rotaciones}
 
-A diferencia del caso de los ángulos de Euler, los cuaternios unitales sí son un recubrimiento del espacio de rotaciones
-$SO(3)$. Esto se deduce directamente del hecho de que $S^3$ es un recubridor de dos hojas de $\mathbb{RP}^3$ (de hecho,
-es su recubridor universal).
+A diferencia del caso de los ángulos de Euler, los cuaternios unitales
+sí son un recubrimiento del espacio de rotaciones $SO(3)$. Esto se
+deduce directamente del hecho de que $S^3$ es un recubridor de dos
+hojas de $\mathbb{RP}^3$ (de hecho, es su recubridor universal).
 
-Al ser recubridor de dos hojas, tenemos que los cuaternios que se identifican por la relación de equivalencia de $\mathbb{RP}^3$
-representan la misma rotación, pues van al mismo elemento por la aplicación recubridora. En este caso, son los cuaternios opuestos. 
+Al ser recubridor de dos hojas, tenemos que los cuaternios que se
+identifican por la relación de equivalencia de $\mathbb{RP}^3$
+representan la misma rotación, pues van al mismo elemento por la
+aplicación recubridora. En este caso, son los cuaternios opuestos.
 
 \section{Aplicación en gráficos}
 
 \subsection{Exponenciación de cuaternios}
 \begin{definition}
-  Se define la función \textbf{exponencial en cuaternios}, $\exp \colon \mathbb{H} \to \mathbb{H}$, desde
-  la serie de potencias de la función exponencial usual, es decir,
+  Se define la función \textbf{exponencial en cuaternios},
+  $\exp \colon \mathbb{H} \to \mathbb{H}$, desde la serie de potencias
+  de la función exponencial usual, es decir,
 
   \[
     \exp(q) =  1 + q + \frac{q^2}{2!} + \frac{q^3}{3!} + \dots + \frac{q^n}{n!} + \dots .
   \]
 \end{definition}
 
-Si escribimos los cuaternios como versores, $q = \cos \theta + v \sin \theta$, tendremos que
-como $v^2 = -1$, se cumple la fórmula de Euler para cualquier $\theta \in \mathbb{R}$ como
-$\exp(\theta v) = \cos \theta + v \sin \theta = q$,
-y por tanto podemos calcular la exponente de un cuaternio como
+Si escribimos los cuaternios como versores,
+$q = \cos \theta + v \sin \theta$, tendremos que como $v^2 = -1$, se
+cumple la fórmula de Euler para cualquier $\theta \in \mathbb{R}$ como
+$\exp(\theta v) = \cos \theta + v \sin \theta = q$, y por tanto
+podemos calcular la exponente de un cuaternio como
 
 \[
   q^t = \exp(t \theta v) = \cos (t \theta) + v \sin (t \theta).
 \]
 
 \subsection{Spherical Linear Interpolation (SLERP)}
-El método \textbf{SLERP} (Spherical Lineal Interpolation) permite interpolar
-un punto entre dos orientaciones de manera continua. Dadas dos orientaciones
-$q_1,q_2$ representadas como cuaterniones, un punto $p$ y un parámetro de
-interpolación $t$, buscamos un camino continuo que interpole $p$ desde $q_1$,
-cuando $t=0$, hasta $q_2$, cuando $t=1$.
+El método \textbf{SLERP} (Spherical Lineal Interpolation) permite
+interpolar un punto entre dos orientaciones de manera continua. Dadas
+dos orientaciones $q_1,q_2$ representadas como cuaterniones, un punto
+$p$ y un parámetro de interpolación $t$, buscamos un camino continuo
+que interpole $p$ desde $q_1$, cuando $t=0$, hasta $q_2$, cuando
+$t=1$.
 
 Para calcular la rotación interpolada, usamos la fórmula
 
 \[q' = q_1(q_1^{-1}q_2)^t\]
 
-Cuando interpolamos usando SLERP, la interpolación de cuaternios induce a
-su vez una interpolación en las rotaciones tridimensionales, que nos dará
-una rotación con velocidad angular uniforme y alrededor de un eje fijo.
+Cuando interpolamos usando SLERP, la interpolación de cuaternios
+induce a su vez una interpolación en las rotaciones tridimensionales,
+que nos dará una rotación con velocidad angular uniforme y alrededor
+de un eje fijo.
 % Por qué? https://en.wikipedia.org/wiki/Slerp#Quaternion_Slerp
 
-Sin embargo, como el recubrimiento es doble, el camino de rotaciones puede
-ser doble y ser o bien el camino más corto, o bien el camino más largo.
+Sin embargo, como el recubrimiento es doble, el camino de rotaciones
+puede ser doble y ser o bien el camino más corto, o bien el camino más
+largo.
 
 % http://number-none.com/product/Understanding%20Slerp,%20Then%20Not%20Using%20It/
 % https://www.geometrictools.com/Documentation/Quaternions.pdf
 
 \subsection{Spherical and Quadrangle (SQUAD)}
+
+Sean $a,b,p,q$ cuatro cuaternios, vistos como vértices entre los que
+realizaremos la interpolación cúbica. La idea es interpolar un punto
+$c$ entre $p$ y $q$ mientras que, a la vez, interpolamos un $d$ entre
+$a$ y $b$; finalmente, interpolamos con una fórmula cuadrática entre
+los puntos de las interpolaciones previas $d$ y $c$.
+
+\[
+  \mathrm{Squad}(p,q,a,b;t) =
+  \mathrm{Slerp}(\mathrm{Slerp}(p,q;t), \mathrm{Slerp}(a,b;t); 2t(1-t))
+\]
+
 % http://run.usc.edu/cs520-s13/assign2/p245-shoemake.pdf
 
 \section{Referencias}
