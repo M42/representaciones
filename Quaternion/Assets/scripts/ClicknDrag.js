@@ -46,24 +46,22 @@ function Update(){
   } else if(Input.GetMouseButton(0) || Input.GetMouseButton(1)){
     var new_mouseScreenPoint = Input.mousePosition;
     var rotate_angle = new_mouseScreenPoint - mouseScreenPoint;
-    var foo = zRotor.transform.rotation.z;
     var sign = Input.GetMouseButton(1) ? -1 : 1;
     //Debug.Log(rotate_angle.y);
 
     if (gameobject != null) {
       if(gameobject.name == xRotor.name){
-        //Debug.Log("X: "+xRotor.transform.rotation);
+        Debug.Log("X: "+xRotor.transform.rotation);
         rotx += sign * speed;
         xRotor.transform.rotation = xRotation * Quaternion.Euler(0,rotx,0);
       } 
       else if(gameobject.name == yRotor.name){
-        //Debug.Log("Y: "+yRotor.transform.rotation);
+        Debug.Log("Y: "+yRotor.transform.rotation);
         roty += sign * speed;
         yRotor.transform.rotation = yRotation * Quaternion.Euler(0,roty,0);
       } 
       else if(gameobject.name == zRotor.name){
-        //Debug.Log(foo);
-        //Debug.Log("Z: "+zRotor.transform.rotation);
+        Debug.Log("Z: "+zRotor.transform.rotation);
         rotz += sign * speed;
         zRotor.transform.rotation = zRotation * Quaternion.Euler(0,rotz,0);
 
