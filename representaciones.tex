@@ -398,12 +398,25 @@ vector.
 
 \begin{theorem}
   \textbf{Fórmula de Rodrigues para la rotación.} Si llamamos
-  $\mathbf{R}_{\alpha,a}$ a la rotación de ángulo $\alpha$ sobre el
+  $\mathbf{R}_{\alpha,u}$ a la rotación de ángulo $\alpha$ sobre el
   eje dado por un vector no nulo $a$, la rotación de un vector
   $v \in\mathbb{R}^3$ se calcula como
-  \[R_{\alpha,a}v = v \cos \alpha + (u \times v)\sin \alpha + u(u\cdot v)(1-\cos\theta).\]
+  \[R_{\alpha,a}v = v \cos \alpha + (u \times v)\sin \alpha + u(u\cdot v)(1-\cos\alpha).\]
 \end{theorem}
 \begin{proof}
+  El vector $v$ podemos descomponerlo en su componente paralela y su
+  componente perpendicular a $u$, dadas respectivamente por
+  \[w_1 = (v \cdot u) v \quad \text{ y } \quad w_2 = u \times (u \times v).\]
+  Nótese que la rotación sólo necesitamos aplicarla a
+  la componente perpendicular. Si calculamos la rotación de la
+  componente perpendicular tenemos que
+  $\mathbf{R_{\alpha,u}} w_2 = \cos(\alpha) w_2 + \sin(\alpha) u \times v$, con
+  lo que podemos sustituir en la descomposición $v = w_1+w_2$ para
+  tener
+  \[\mathbf{R_{\alpha,u}}v =
+    w_1 + (v-w_1)\cos\alpha + (u \times v)\sin\alpha =
+    v\cos\alpha + (1-\cos \alpha)(u \cdot v)v + (u \times v)\sin\alpha.
+  \]
   % https://en.wikipedia.org/wiki/Rodrigues%27_rotation_formula#Derivation
 \end{proof}
 
