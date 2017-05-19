@@ -416,7 +416,7 @@ $p$ y un parámetro de interpolación $t$, buscamos un camino continuo
 que interpole $p$ desde $q_1$, cuando $t=0$, hasta $q_2$, cuando
 $t=1$.
 
-Para calcular la rotación interpolada, usamos la fórmula
+Para calcular la rotación interpolada, usamos la fórmula \cite{vince11}
 \[q' = q_1(q_1^{-1}q_2)^t \qquad\text{ para } t \in [0,1].\]
 
 Cuando interpolamos usando SLERP, la interpolación de cuaternios
@@ -466,6 +466,11 @@ los puntos de las interpolaciones previas $d$ y $c$.
   Representations of the Rotation and Lorentz Groups and their Applications,
   New York: Pergamon Press.
 
+\bibitem{vince11}
+  John Vince (2011),
+  Quaternions for Computer Graphics,
+  Springer-Verlag London.
+  
 \end{thebibliography}
 
 \end{document}
