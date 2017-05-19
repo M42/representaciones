@@ -153,8 +153,9 @@ ellas. Empezaremos estudiando las propiedades topológicas del grupo.
 
 \subsection{Propiedades topológicas de las rotaciones}
 \begin{proposition}
-  El grupo $SO(3)$, con la topología dada por (?) es homeomorfo al
-  espacio proyectivo tridimensional $\mathbb{RP}^3$.
+  El grupo $SO(3)$, con la topología inducida desde la topología usual
+  de las matrices, es homeomorfo al espacio proyectivo tridimensional
+  $\mathbb{RP}^3$.
 \end{proposition}
 \begin{proof}
   Consideramos una esfera en $\mathbb R^3$ de radio $\pi$,
@@ -365,9 +366,13 @@ $\mathbb{R}^4$.
 
 \subsection{Cuaternios como esfera de dimensión 4}
 
-Tomando la condición obtenida anteriormente, $a^2+b^2+c^2+d^2 = 1$, podemos ver los cuaternios de $SU(2)$ como elementos $x \in
-\mathbb R^4$ que verifican $\left|x\right| = 1 \implies SU(2) \cong S^3$. La aplicación definida en el teorema \ref{su2} nos da
-el isomorfismo entre los dos espacios, que de hecho es un difeomorfismo, sin más que considerar el difeomorfismo entre $M_2(\mathbb C)$ y $R^8$ y restringir.
+Tomando la condición obtenida anteriormente, $a^2+b^2+c^2+d^2 = 1$,
+podemos ver los cuaternios de $SU(2)$ como elementos
+$x \in \mathbb R^4$ que verifican
+$\left|x\right| = 1 \implies SU(2) \cong S^3$. La aplicación definida
+en el teorema \ref{su2} nos da el isomorfismo entre los dos espacios,
+que de hecho es un difeomorfismo, sin más que considerar el
+difeomorfismo entre $M_2(\mathbb C)$ y $R^8$ y restringir.
 
 % Cuaternios de SU(2)???
 
@@ -403,7 +408,8 @@ podemos calcular la exponencial de un cuaternio como
 \[q^t = \exp(t \theta v) = \cos (t \theta) + v \sin (t \theta).\]
 
 \subsection{Spherical Linear Interpolation (SLERP)}
-El método \textbf{SLERP} (Spherical Lineal Interpolation) permite
+
+El método \textbf{Spherical Lineal Iterpolation (SLERP)} permite
 interpolar un punto entre dos orientaciones de manera continua. Dadas
 dos orientaciones $q_1,q_2$ representadas como cuaterniones, un punto
 $p$ y un parámetro de interpolación $t$, buscamos un camino continuo
@@ -411,8 +417,7 @@ que interpole $p$ desde $q_1$, cuando $t=0$, hasta $q_2$, cuando
 $t=1$.
 
 Para calcular la rotación interpolada, usamos la fórmula
-
-\[q' = q_1(q_1^{-1}q_2)^t\]
+\[q' = q_1(q_1^{-1}q_2)^t \qquad\text{ para } t \in [0,1].\]
 
 Cuando interpolamos usando SLERP, la interpolación de cuaternios
 induce a su vez una interpolación en las rotaciones tridimensionales,
@@ -429,15 +434,19 @@ largo.
 
 \subsection{Spherical and Quadrangle (SQUAD)}
 
+El método \textbf{Spherical and Quadrangle (SQUAD)} es un método
+similar al método de De Casteljau para el cálculo de curvas de Bézier,
+y proporciona una interpolación cúbica entre dos orientaciones
+parametrizada por otras dos.
+
 Sean $a,b,p,q$ cuatro cuaternios, vistos como vértices entre los que
 realizaremos la interpolación cúbica. La idea es interpolar un punto
 $c$ entre $p$ y $q$ mientras que, a la vez, interpolamos un $d$ entre
 $a$ y $b$; finalmente, interpolamos con una fórmula cuadrática entre
 los puntos de las interpolaciones previas $d$ y $c$.
-
 \[
   \mathrm{Squad}(p,q,a,b;t) =
-  \mathrm{Slerp}(\mathrm{Slerp}(p,q;t), \mathrm{Slerp}(a,b;t); 2t(1-t))
+  \mathrm{Slerp}(\mathrm{Slerp}(p,q;t), \mathrm{Slerp}(a,b;t); 2t(1-t)).
 \]
 
 % http://run.usc.edu/cs520-s13/assign2/p245-shoemake.pdf
