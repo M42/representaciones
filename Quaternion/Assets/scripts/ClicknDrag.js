@@ -71,7 +71,7 @@ function Update(){
       }
     }
   }
-  else if(Input.GetMouseButtonUp(0) || Input.GetMouseButtonUp(1)) {
+  else if (gameobject || Input.GetMouseButtonUp(0) || Input.GetMouseButtonUp(1)) {
     Cursor.visible = true;
     gameobject.GetComponent.<Renderer>().material.color = lastColor;
     gameobject = null;
