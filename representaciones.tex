@@ -393,23 +393,36 @@ aplicación recubridora. En este caso, son los cuaternios opuestos.
 \subsection{Fórmulas de Rodrigues}
 Las \textbf{fórmulas de Rodrigues} representan una solución explícita
 a la composición de dos rotaciones en el espacio tridimensional sobre
-dos vectores distintos.
+dos vectores distintos y para el cálculo de una rotación sobre un
+vector.
 
 \begin{theorem}
-  \textbf{Fórmula de Rodrigues.} Si llamamos $\mathbf{R}_{\alpha,a}$ a la rotación de ángulo
-  $\alpha$ sobre el eje dado por un vector no nulo $a$, la
-  ecuación
+  \textbf{Fórmula de Rodrigues para la rotación.} Si llamamos
+  $\mathbf{R}_{\alpha,a}$ a la rotación de ángulo $\alpha$ sobre el
+  eje dado por un vector no nulo $a$, la rotación de un vector
+  $v \in\mathbb{R}^3$ se calcula como
+  \[R_{\alpha,a}v = v \cos \alpha + (u \times v)\sin \alpha + u(u\cdot v)(1-\cos\theta).\]
+\end{theorem}
+\begin{proof}
+  % https://en.wikipedia.org/wiki/Rodrigues%27_rotation_formula#Derivation
+\end{proof}
+
+\begin{theorem}
+  \textbf{Fórmula de Rodrigues para la composición.} Si llamamos
+  $\mathbf{R}_{\alpha,a}$ a la rotación de ángulo $\alpha$ sobre el
+  eje dado por un vector no nulo $a$, la ecuación
   \[\mathbf{R}_{\gamma,c} =\mathbf{R}_{\alpha,a}\mathbf{R}_{\beta,b}\]
   tiene una solución con
   \[\begin{aligned}
     \cos \frac{1}{2}\gamma &=
     \cos \frac{1}{2}\alpha \cos\frac{1}{2}\beta - \sin\frac{1}{2}\alpha\sin\frac{1}{2}\beta (a\cdot b)\\
-    \sin \frac{1}{2}\gamma n &=
+    c \sin \frac{1}{2}\gamma &=
     \sin \frac{1}{2}\alpha \cos\frac{1}{2}\beta a +
     \cos \frac{1}{2}\alpha \sin\frac{1}{2}\beta b +
     \sin \frac{1}{2}\alpha \sin\frac{1}{2}\beta (a \times b)
   \end{aligned}\]
   donde notamos el producto escalar como $a\cdot b$ y el producto vectorial como $a \times b$.
+  \cite{vince11}
 \end{theorem}
 
 Es interesante notar entonces cómo el producto de dos \textit{versores}
@@ -423,18 +436,57 @@ Sean los versores dados por
   \qquad
   q_b = \cos \frac{1}{2} \beta + b \sin \frac{1}{2} \beta,
   \qquad
-  q_c = \cos \frac{1}{2} \gamma + b \sin \frac{1}{2} \gamma.
+  q_c = \cos \frac{1}{2} \gamma + c \sin \frac{1}{2} \gamma.
 \]
-entonces el desarrollo del producto acaba resultando en la fórmula
-de Rodrigues con la misma solución
+entonces el desarrollo del producto acaba resultando en la fórmula de
+Rodrigues con la misma solución
 \[\begin{aligned}
     \cos \frac{1}{2}\gamma &=
     \cos \frac{1}{2}\alpha \cos\frac{1}{2}\beta - \sin\frac{1}{2}\alpha\sin\frac{1}{2}\beta (a\cdot b)\\
-    \sin \frac{1}{2}\gamma n &=
+    c\sin \frac{1}{2}\gamma &=
     \sin \frac{1}{2}\alpha \cos\frac{1}{2}\beta a +
     \cos \frac{1}{2}\alpha \sin\frac{1}{2}\beta b +
     \sin \frac{1}{2}\alpha \sin\frac{1}{2}\beta (a \times b).
   \end{aligned}\]
+
+\subsection{Rotación con cuaternios}
+Vamos a resolver el problema de cómo rotar un vector del espacio
+$V \cong \mathbb{R}^3$ usando cuaternios. La rotación que intentaremos
+resolver será de ángulo $\alpha$ y tendrá como eje de rotación el dado
+por el vector unitario $u$. Comprobaremos que para rotar un vector $p$
+habrá que tomar el cuaternio
+\[q = \cos \frac{1}{2}\alpha + u \sin \frac{1}{2}\alpha\]
+y conjugar el vector sobre él, como $R_{\alpha,u}(p) = qpq^\ast $.
+
+\begin{proposition}
+Dado un vector $p$, la rotación de ángulo $\alpha$ con el eje dado por
+el vector unitario $u$ es
+\[ \mathbf{R}_{\alpha,u}p =
+  \left(\cos \frac{\alpha}{2} + u \sin \frac{\alpha}{2}\right)
+  p
+  \left(\cos \frac{\alpha}{2} - u \sin \frac{\alpha}{2}\right).\]
+O, si la escribimos tomando un cuaternio unitario
+\[
+  q = \cos \frac{\alpha}{2} + u \sin \frac{\alpha}{2},
+\]
+tenemos que $\mathbf{R}p = qpq^\ast $.
+\end{proposition}
+\begin{proof}
+  Simplemente desarrollando
+  \[\begin{aligned}
+      qpq^\ast &=
+      p \cos^2\frac{\alpha}{2} + (up-pu)\sin\frac{\alpha}{2}\cos\frac{\alpha}{2} - upu\sin\frac{\alpha}{2}
+      \\&=
+      p \left(\cos^2\frac{\alpha}{2} - \sin^2\frac{\alpha}{2} \right) +
+      (p \times u)\left(2\sin\frac{\alpha}{2}\cos\frac{\alpha}{2}\right) +
+      u(u\cdot p)\left(2\sin^2\frac{\alpha}{2}\right)
+      \\&=
+      p \cos\alpha +
+      (p \times u)\sin\alpha +
+      u(u\cdot p)\left(1 - \cos \alpha\right),
+    \end{aligned}\]
+  que vuelve a ser la fórmula de Rodrigues para la rotación.
+\end{proof}
 
 \section{Aplicación en gráficos}
 
