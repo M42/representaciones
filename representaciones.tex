@@ -165,7 +165,7 @@ ellas. Empezaremos estudiando las propiedades topológicas del grupo.
   puntos antípoda, a los que corresponden las rotaciones de ángulos
   $\pi$ y $-\pi$, que son la misma. Esto nos lleva a identificar los
   puntos antípoda de $\partial \mathbb B$, lo que establece un
-  homeomorfismo entre $SO(3)$ y $\mathbb{RP}^3$. $\qed$
+  homeomorfismo entre $SO(3)$ y $\mathbb{RP}^3$.
 \end{proof}
 
 \begin{remark}
@@ -174,8 +174,8 @@ ellas. Empezaremos estudiando las propiedades topológicas del grupo.
   % Sólo por eso ya se tiene que es difeomorfismo (?)
 \end{remark}
 
-De este resultado se deduce que $SO(3)$ es conexo y que tiene un grupo
-fundamental no trivial, no siendo, por tanto, simplemente conexo.
+De este resultado se deduce que $SO(3)$ es \textit{conexo} y que tiene un grupo
+fundamental no trivial, no siendo, por tanto, \textit{simplemente conexo}.
 
 \subsection{Ejes de rotación}
 En la siguiente proposición demostraremos que cualquier rotación deja
@@ -203,7 +203,6 @@ de la transformación.
     &= \mathrm{det}(M^{-1}) * \mathrm{det}(I_3 - M) =
     \mathrm{det}(I_3 - M) = -\mathrm{det}(M - I_3),
   \end{aligned}\]
-
   de donde se deduce directamente que $\mathrm{det}(M - I_3) = 0$ y que el $1$
   es un autovalor de $M$.
 \end{proof}
@@ -212,33 +211,37 @@ de la transformación.
 \section{Ángulos de Euler}
 \subsection{Definición}
 
-Los ángulos de Euler son tres ángulos utilizados para describir la
-orientación de un objeto respecto a un sistema coordenadas fijo en el
-espacio. Análogamente, podemos no considerar como fijo el sistema de
-coordenadas y ver los ángulos de Euler como una orientación de dicho
-sistema.
+Se conoce como sistema de los \textbf{ángulos de Euler} al que utiliza
+tres ángulos para describir la orientación de un objeto respecto a un
+sistema de coordenadas fijo en el espacio. Análogamente, podemos no
+considerar como fijo el sistema de coordenadas y ver los ángulos de
+Euler como una orientación de dicho sistema. %???
 
 La forma tradicional de usar rotaciones en el espacio se basa en el
-uso de las llamadas rotaciones de Euler, que combinan hasta tres
+uso de las llamadas \textit{rotaciones de Euler}, que combinan hasta tres
 rotaciones sobre los ejes cartesianos, donde la única restricción es
 que no puede haber dos rotaciones sobre el mismo eje contiguas, pues
-derivarían en una.
+derivarían en una. Esas tres rotaciones sobre los ejes cartesianos se
+pueden combinar de 12 formas distintas, consistentes en las 6
+ordenaciones posibles usando los tres índices, además de aquellas seis
+en las que aparece el mismo eje al principio y al final, y uno de los
+dos restantes en la posición central. % ¿Qué son exactamente las rotaciones de Euler?
 
-Las tres rotaciones sobre los ejes cartesianos se pueden combinar de
-12 formas distintas, consistentes en las 6 ordenaciones posibles
-usando los tres índices, además de aquellas seis en las que aparece el
-mismo eje al principio y al final, y uno de los dos restantes en la
-posición central.
-
+% Faltaría una definición más formal de ángulos de Euler.
 
 \subsection{Descomposición}
-Cada rotación se descompone en sus tres ángulos de Euler de forma
-única. Vemos las matrices de rotación respecto a los ejes cartesianos,
-de forma que la primera es la rotación de ángulo $\psi$ sobre el eje
-$z$, la segunda rota $\phi$ grados sobre el eje $y$, y la tercera la
-que rota $\theta$ grados con respecto al eje $x$. Las tres rotaciones
-están consideradas en sentido antihorario.
-\footnote{Para cambiar el sentido no hay más que cambiarle el signo a los senos}
+
+% Esto parece un teorema que habría que demostrar
+% ¿La unicidad la tenemos?
+
+Cada rotación se descompone en sus tres rotaciones de Euler de forma
+única.  En la siguiente fórmula escribimos las matrices de rotación
+respecto a los ejes cartesianos, de forma que la primera es la
+rotación de ángulo $\psi$ sobre el eje $z$, la segunda rota $\phi$
+grados sobre el eje $y$, y la tercera la que rota $\theta$ grados con
+respecto al eje $x$. Las tres rotaciones están consideradas en sentido
+antihorario.  \footnote{Para cambiar el sentido no hay más que
+  cambiarle el signo a los senos}
 
 \[\begin{pmatrix}
     \cos \psi & -\sin \psi & 0 \\
@@ -264,12 +267,14 @@ dimensión del toro.
 \subsection{Bloqueo del cardán}
 
 El principal problema del uso de los ángulos de Euler es el llamado
-\textit{bloqueo del cardán}. Este fenómeno consiste en la pérdida de
+\textbf{bloqueo del cardán}. Este fenómeno consiste en la pérdida de
 un grado de libertad a la hora de rotar, debida a la alineación de dos
-de los ejes de rotación. Esto ocurre cuando se dan ciertas
-combinaciones en los ángulos de rotación, provocando dicho
-alineamiento.
+de los ejes de rotación. Esto ocurre naturalmente bajo ciertas
+combinaciones en los ángulos de rotación, que provocan que el primero
+de los ejes quede alineado con el tercero.
 
+
+% Esto debería ser un teorema
 Formalmente, el bloqueo del cardán ocurre debido a que el espacio de
 ángulos de Euler, representados con $\mathbb T^3$, no puede ser
 recubridor del espacio de rotaciones, que se identifica con
