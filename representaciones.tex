@@ -291,28 +291,31 @@ conexos.
 
 \section{Cuaternios}
 \subsection{Versores}
-Sabemos que los cuaternios pueden escribirse como
+Sabemos que el álgebra real de los cuaternios puede escribirse como
 $\mathbb{H} = \mathbb{R} \oplus V$, donde $V$ es el espacio vectorial
-real tridimensional de base $i,j,k$, siendo equivalente a la
+real tridimensional generado por $i,j,k \in \mathbb{H}$, siendo equivalente la
 definición
-
 \[
-  V = \left\{ v \in \mathbb{H} \mid v^2 < 0 \right\}
+  V = \left\{ v \in \mathbb{H} \mid v^2 < 0 \right\}.
 \]
+En la siguiente proposición caracterizaremos los \textit{cuaternios unitarios}
+vistos desde esa escritura. Los cuaternios unitarios son aquellos de norma
+unidad, es decir, aquellos $q \in \mathbb{H}$ que cumplen que
+$\|q\| = qq^\ast = 1$. Serán estos cuaternios unitarios los que nos sirvan
+posteriormente para calcular rotaciones del espacio tridimensional.
 
+\begin{proposition}
 Los cuaternios unitarios, en particular, pueden escribirse como
-$\cos \theta + u \sin \theta$, donde $u$ es un vector unitario de
-$\mathbb{R}^3$. A un cuaternio así escrito se le llama
+$\cos \theta + v \sin \theta$, donde $v$ es un vector de norma unidad del
+espacio $V$ visto como $\mathbb{R}^3$. A un cuaternio así escrito se le llama
 \textbf{versor}.
-
+\end{proposition}
 \begin{proof}
   Si tenemos $q = a + bv$ con $v$ unitario, sabemos que $v^2 = - v(-v) = - vv^\ast = 1$.
   Entonces, si $q$ es unitario,
-
   \[
     1 = qq^\ast = (a+bv)(a-bv) = a^2 + b^2.
   \]
-
   Con lo que existirá algún $\theta$ para el que $a = \cos \theta$ y $b = \sin \theta$.
 \end{proof}
 
@@ -321,36 +324,32 @@ $\mathbb{R}^3$. A un cuaternio así escrito se le llama
 % https://en.wikipedia.org/wiki/Rotation_group_SO(3)#Connection_between_SO.283.29_and_SU.282.29
 
 \begin{definition}
-  Llamamos $\mathrm{SU}(n)$, al espacio de las matrices complejas unitarias de determinante $1$.
-  Es decir,
-
+  Llamamos $\mathrm{SU}(n)$, al grupo de las \textbf{matrices complejas unitarias} de dimensiones
+  $n \times n$ que además tienen determinante $1$. Es decir,
   \[SU(n) = \left\{ M \in U_n(\mathbb{C}) \mid \mathrm{det}(M) = 1 \right\}.\]
 \end{definition}
 
-En particular nos interesamos por $SU(2)$ porque podemos verlo como un embebimiento de la
-esfera tridimensional en $\mathbb{R}^4$.
+En particular, nos interesaremos por el caso $SU(2)$ porque podemos
+verlo como un embebimiento de la esfera tridimensional en
+$\mathbb{R}^4$.
 
 \begin{theorem}
 \label{su2}
   Cada matriz en $SU(2)$ puede escribirse como
-
   \[\begin{pmatrix}
       a+bi & c+di \\
       -c+di & a-bi
     \end{pmatrix}\]
-
   donde $a,b,c,d \in \mathbb{R}$ y $a^2+b^2+c^2+d^2 = 1$.
 \end{theorem}
 \begin{proof}
   Si tomamos $\alpha,\beta,\gamma,\delta \in \mathbb{C}$ formando una matriz unitaria de
   determinante $1$ como
-
     \[\begin{pmatrix}
       \alpha & \beta \\
       \gamma & \delta
     \end{pmatrix},\]
-
-  tenemos las relaciones siguientes, obtenidas del hecho de que debe ser ortogonal
+  tendremos las relaciones siguientes, obtenidas desde la ortogonalidad que exigimos a la matriz
 
   \begin{itemize}
     \item $|\alpha|+|\beta| = 1$
@@ -368,8 +367,9 @@ esfera tridimensional en $\mathbb{R}^4$.
 
 Tomando la condición obtenida anteriormente, $a^2+b^2+c^2+d^2 = 1$, podemos ver los cuaternios de $SU(2)$ como elementos $x \in
 \mathbb R^4$ que verifican $\left|x\right| = 1 \implies SU(2) \cong S^3$. La aplicación definida en el teorema \ref{su2} nos da
-el isomorfismo entre los dos espacios, que de hecho es un difeomorfismo, sin más que considerar el difeomorfismo entre $M_2(\mathbb C)$
-y $R^8$ y restringir.
+el isomorfismo entre los dos espacios, que de hecho es un difeomorfismo, sin más que considerar el difeomorfismo entre $M_2(\mathbb C)$ y $R^8$ y restringir.
+
+% Cuaternios de SU(2)???
 
 \subsection{Recubrimiento del grupo de rotaciones}
 
@@ -391,21 +391,16 @@ aplicación recubridora. En este caso, son los cuaternios opuestos.
   Se define la función \textbf{exponencial en cuaternios},
   $\exp \colon \mathbb{H} \to \mathbb{H}$, desde la serie de potencias
   de la función exponencial usual, es decir,
-
-  \[
-    \exp(q) =  1 + q + \frac{q^2}{2!} + \frac{q^3}{3!} + \dots + \frac{q^n}{n!} + \dots .
+  \[\exp(q) =  1 + q + \frac{q^2}{2!} + \frac{q^3}{3!} + \dots + \frac{q^n}{n!} + \dots .
   \]
 \end{definition}
 
 Si escribimos los cuaternios como versores,
-$q = \cos \theta + v \sin \theta$, tendremos que como $v^2 = -1$, se
+$q = \cos \theta + v \sin \theta$, tendremos que, como $v^2 = -1$, se
 cumple la fórmula de Euler para cualquier $\theta \in \mathbb{R}$ como
 $\exp(\theta v) = \cos \theta + v \sin \theta = q$, y por tanto
-podemos calcular la exponente de un cuaternio como
-
-\[
-  q^t = \exp(t \theta v) = \cos (t \theta) + v \sin (t \theta).
-\]
+podemos calcular la exponencial de un cuaternio como
+\[q^t = \exp(t \theta v) = \cos (t \theta) + v \sin (t \theta).\]
 
 \subsection{Spherical Linear Interpolation (SLERP)}
 El método \textbf{SLERP} (Spherical Lineal Interpolation) permite
