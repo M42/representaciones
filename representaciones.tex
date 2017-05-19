@@ -389,6 +389,53 @@ representan la misma rotación, pues van al mismo elemento por la
 aplicación recubridora. En este caso, son los cuaternios opuestos.
 
 
+\section{Rotaciones con cuaternios}
+\subsection{Fórmulas de Rodrigues}
+Las \textbf{fórmulas de Rodrigues} representan una solución explícita
+a la composición de dos rotaciones en el espacio tridimensional sobre
+dos vectores distintos.
+
+\begin{theorem}
+  \textbf{Fórmula de Rodrigues.} Si llamamos $\mathbf{R}_{\alpha,a}$ a la rotación de ángulo
+  $\alpha$ sobre el eje dado por un vector no nulo $a$, la
+  ecuación
+  \[\mathbf{R}_{\gamma,c} =\mathbf{R}_{\alpha,a}\mathbf{R}_{\beta,b}\]
+  tiene una solución con
+  \[\begin{aligned}
+    \cos \frac{1}{2}\gamma &=
+    \cos \frac{1}{2}\alpha \cos\frac{1}{2}\beta - \sin\frac{1}{2}\alpha\sin\frac{1}{2}\beta (a\cdot b)\\
+    \sin \frac{1}{2}\gamma n &=
+    \sin \frac{1}{2}\alpha \cos\frac{1}{2}\beta a +
+    \cos \frac{1}{2}\alpha \sin\frac{1}{2}\beta b +
+    \sin \frac{1}{2}\alpha \sin\frac{1}{2}\beta (a \times b)
+  \end{aligned}\]
+  donde notamos el producto escalar como $a\cdot b$ y el producto vectorial como $a \times b$.
+\end{theorem}
+
+Es interesante notar entonces cómo el producto de dos \textit{versores}
+satisface esta misma fórmula, lo que hará que la multiplicación de
+cuaternios pueda ser luego interpretada como la composición de
+rotaciones.
+
+Sean los versores dados por
+\[
+  q_a = \cos \frac{1}{2} \alpha + a \sin \frac{1}{2} \alpha,
+  \qquad
+  q_b = \cos \frac{1}{2} \beta + b \sin \frac{1}{2} \beta,
+  \qquad
+  q_c = \cos \frac{1}{2} \gamma + b \sin \frac{1}{2} \gamma.
+\]
+entonces el desarrollo del producto acaba resultando en la fórmula
+de Rodrigues con la misma solución
+\[\begin{aligned}
+    \cos \frac{1}{2}\gamma &=
+    \cos \frac{1}{2}\alpha \cos\frac{1}{2}\beta - \sin\frac{1}{2}\alpha\sin\frac{1}{2}\beta (a\cdot b)\\
+    \sin \frac{1}{2}\gamma n &=
+    \sin \frac{1}{2}\alpha \cos\frac{1}{2}\beta a +
+    \cos \frac{1}{2}\alpha \sin\frac{1}{2}\beta b +
+    \sin \frac{1}{2}\alpha \sin\frac{1}{2}\beta (a \times b).
+  \end{aligned}\]
+
 \section{Aplicación en gráficos}
 
 \subsection{Exponenciación de cuaternios}
