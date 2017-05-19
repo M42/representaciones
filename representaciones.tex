@@ -38,6 +38,12 @@
 \newtheorem*{remark}{Nota}
 \renewcommand*{\proofname}{Demostración}
 
+% Corrige el espacio previo a las definiciones
+\makeatletter
+\def\thm@space@setup{%
+  \thm@preskip=\parskip \thm@postskip=0pt
+}
+\makeatother
 
 % Fuente
 \usepackage{courier}
@@ -57,7 +63,6 @@
 % Se elige el estilo fancy y márgenes de 3 centímetros.
 \pagestyle{fancy}
 \geometry{left=3cm,right=3cm,top=3cm,bottom=3cm,headheight=1cm,headsep=0.5cm} % Márgenes y cabecera.
-% Se limpia la cabecera y el pie de página para poder rehacerlos luego.
 \fancyhf{}
 
 % Espacios en el documento:
@@ -121,35 +126,48 @@
 \subsection{El grupo de rotación SO(3)}
 
 \begin{definition}
-  Llamamos $O(n)$ al grupo de las \textbf{matrices ortogonales}
-  de dimensiones $n \times n$, aquellas que cumplen que $Q^TQ = QQ^T = I$,
-  bajo la composición.
+  Llamamos $O(n)$ al grupo de las \textbf{matrices ortogonales} reales
+  de dimensiones $n \times n$ con la operación de composición; es
+  decir,
+  \[O(n) = \left\{ M \in GL(n) \mid MM^t=M^tM = I_n \right\}.\]
 \end{definition}
 
 Nótese que las matrices ortogonales forman un subgrupo del grupo
 lineal $GL(n)$ de matrices invertibles; y que, por definición, sólo
-pueden tener determinante $1$ y $-1$.
+pueden tener determinante $1$ y $-1$. Las matrices ortogonales dentro
+de $GL(n)$ representan las \textit{isometrías} dentro del grupo de isomorfismos.
 
 \begin{definition}
   Llamamos $SO(n)$ al \textbf{subgrupo de rotaciones}, definido como
   el subgrupo de $O(n)$ formado por aquellas matrices que tienen
-  determinante $1$.
+  determinante $1$. Es decir,
+  \[SO(n) = \left\{ M \in O(n) \mid MM^t = M^tM = I_n \right\}.\]
 \end{definition}
 
-Vamos a considerar $SO(3)$, las rotaciones sobre el origen de $\mathbb R^3$, pues son laz que nos interesan en este caso.
-Vamos a ver un resultado sobre la topología de este grupo.
+En este texto estudiaremos $SO(3)$, las rotaciones del espacio
+$\mathbb R^3$ dejando fijo el origen, por ser las que pueden aplicarse
+a la generación de gráficos tridimensionales por computador. Nuestro
+interés último será poder representar las rotaciones de este espacio
+de forma que simplifique nuestros cálculos al trabajar con
+ellas. Empezaremos estudiando las propiedades topológicas del grupo.
 
+\subsection{Propiedades topológicas de las rotaciones}
 \begin{proposition}
-	$SO(3)$ es homeomorfo a $\mathbb{RP}^3$
+  El grupo $SO(3)$, con la topología dada por (?) es homeomorfo al
+  espacio proyectivo tridimensional $\mathbb{RP}^3$.
 \end{proposition}
 
-\begin{proofname}\\
-	Consideramos una esfera en $\mathbb R^3$ de radio $\pi$, $\mathbb B = B(0, \pi)$. Asignamos a cada punto $x \in \mathbb B$
-	una rotación, con eje la recta que une el origen y $x$, y ángulo de rotación $\alpha = d(x, O)$ la distancia con signo al
-	origen. De esta forma, cada	punto representa una única rotación, salvo los puntos antípoda, a los que corresponden las
-	rotaciones de ángulos $\pi$ y $-\pi$, que son la misma. Esto nos lleva a identificar los puntos antípoda de $\partial \mathbb B$,
-	lo que establece un homeomorfismo entre $SO(3)$ y $\mathbb{RP}^3$. $\qed$
-\end{proofname}
+\begin{proof}
+  Consideramos una esfera en $\mathbb R^3$ de radio $\pi$,
+  $\mathbb B = B(0, \pi)$. Asignamos a cada punto $x \in \mathbb B$
+  una rotación, con eje la recta que une el origen y $x$, y ángulo de
+  rotación $\alpha = d(x, O)$ la distancia con signo al origen. De
+  esta forma, cada punto representa una única rotación, salvo los
+  puntos antípoda, a los que corresponden las rotaciones de ángulos
+  $\pi$ y $-\pi$, que son la misma. Esto nos lleva a identificar los
+  puntos antípoda de $\partial \mathbb B$, lo que establece un
+  homeomorfismo entre $SO(3)$ y $\mathbb{RP}^3$. $\qed$
+\end{proof}
 
 
 \begin{remark}
