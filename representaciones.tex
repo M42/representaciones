@@ -384,8 +384,7 @@ En particular, nos interesaremos por el caso $SU(2)$ porque podemos
 verlo como un embebimiento de la esfera tridimensional en
 $\mathbb{R}^4$.
 
-\begin{theorem}
-\label{su2}
+\begin{theorem}\label{su2}
   Cada matriz en $SU(2)$ puede escribirse como
   \[\begin{pmatrix}
       a+bi & c+di \\
@@ -414,11 +413,18 @@ $\mathbb{R}^4$.
 
 
 \subsection{Cuaternios como esfera de dimensión 4}
-
-Tomando la condición obtenida anteriormente, $a^2+b^2+c^2+d^2 = 1$,
-podemos ver los cuaternios de $SU(2)$ como elementos
-$x \in \mathbb R^4$ que verifican
-$\left|x\right| = 1 \implies SU(2) \cong S^3$. La aplicación definida
+Cuando interpretamos los cuaternios como matrices complejas de dimensiones
+$2 \times 2$, como
+\[
+  1 \mapsto \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix},\quad
+  i \mapsto \begin{pmatrix} i & 0 \\ 0 &-i \end{pmatrix},\quad
+  j \mapsto \begin{pmatrix} 0 & 1 \\-1 & 0 \end{pmatrix},\quad
+  k \mapsto \begin{pmatrix} 0 & i \\ i & 0 \end{pmatrix},\quad
+\]
+junto con la condición obtenida anteriormente, $a^2+b^2+c^2+d^2 = 1$,
+podemos ver los cuaternios unitarios como los elementos de $SU(2)$.
+Estos son, a su vez, vectores unitarios de $\mathbb{R}^4$, teniéndose
+que $SU(2) \cong S^3$. La aplicación definida
 en el teorema \ref{su2} nos da el isomorfismo entre los dos espacios,
 que de hecho es un difeomorfismo, sin más que considerar el
 difeomorfismo entre $M_2(\mathbb C)$ y $\mathbb R^8$ y restringir.
