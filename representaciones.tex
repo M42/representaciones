@@ -110,7 +110,14 @@
 \newcommand{\docemail}{}
 
 % Resumen
-\newcommand{\docabstract}{El cálculo de orientaciones en el espacio tridimensional es necesario para la generación de gráficos y animaciones por ordenador. Los ángulos de Euler representan el espacio de orientaciones pero no forman un homeomorfismo local, lo que causa errores gráficos (bloqueo del cardán), mientras que los cuaterniones de Hamilton sí proporcionan un recubrimiento de dos hojas del mismo. Con ellos presentaremos un ejemplo de movimiento de objetos en gráficos tridimensionales.}
+\newcommand{\docabstract}{El cálculo de orientaciones en el espacio
+  tridimensional es necesario para la generación de gráficos y
+  animaciones por ordenador. Los ángulos de Euler representan el
+  espacio de orientaciones pero no forman un homeomorfismo local, lo
+  que causa errores gráficos (bloqueo del cardán), mientras que los
+  cuaterniones de Hamilton sí proporcionan un recubrimiento de dos
+  hojas del mismo. Con ellos presentaremos un ejemplo de movimiento de
+  objetos en gráficos tridimensionales.}
 
 \begin{document}
 
@@ -351,13 +358,12 @@ $\mathbb{R}^4$.
       \gamma & \delta
     \end{pmatrix},\]
   tendremos las relaciones siguientes, obtenidas desde la ortogonalidad que exigimos a la matriz
-
-  \begin{itemize}
-    \item $|\alpha|+|\beta| = 1$
-    \item $\alpha\delta-\beta\gamma = 1$
-    \item $\alpha\overline{\gamma} + \beta\overline{\delta} = 0$
-  \end{itemize}
-
+  \[|\alpha|+|\beta| = 1,
+    \quad
+    \alpha\delta-\beta\gamma = 1,
+    \quad
+    \alpha\overline{\gamma} + \beta\overline{\delta} = 0,
+  \]
   y que se resuelven con $\alpha = \overline{\delta}$ y
   $\beta = -\overline{\gamma}$; mientras que la primera condición
   nos da la condición $a^2+b^2+c^2+d^2 = 1$.
