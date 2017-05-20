@@ -21,7 +21,6 @@
 \usepackage[utf8]{inputenc}
 \selectlanguage{spanish}
 
-
 % Matemáticas
 \usepackage{amsthm}
 \usepackage{amsfonts}
@@ -614,6 +613,18 @@ los puntos de las interpolaciones previas $d$ y $c$.
 
 % http://run.usc.edu/cs520-s13/assign2/p245-shoemake.pdf
 
+\section{Realización práctica}
+
+\subsection{El motor de gráficos Unity}
+
+Unity \cite{unity} es un motor de gráficos tridimensionales que incorpora funcionalidad necesaria para desarrollar videojuegos, y abstrae el hardware subyacente para permitir la portabilidad. En particular, implementa animaciones y permite representar las rotaciones mediante cuaternios.
+
+\subsection{Cardán con Unity}
+
+Se ha desarrollado un ejemplo de rotación con ángulos de Euler utilizando este motor gráfico. El programa muestra tres rotores correspondientes a cada eje, jerarquizados 
+
+\subsection{Uso de cuaternios}
+
 \section{Referencias}
 % https://en.wikipedia.org/wiki/Euler_angles
 % https://en.wikipedia.org/wiki/Gimbal_lock
@@ -633,6 +644,11 @@ los puntos de las interpolaciones previas $d$ y $c$.
   John Vince (2011),
   Quaternions for Computer Graphics,
   Springer-Verlag London.
+
+\bibitem{unity}
+  Unity Game Engine,
+  Sitio Oficial,
+  https://unity3d.com
 
 \end{thebibliography}
 
