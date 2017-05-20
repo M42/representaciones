@@ -13,5 +13,5 @@ function Update () {
 }
 
 function setCapsuleText(){
-    capsuleQuaternion.text = "Cuaternio de la cápsula: (" + capsule.transform.rotation.x.ToString() + "," + capsule.transform.rotation.y.ToString() + "," + capsule.transform.rotation.z.ToString() + "," + capsule.transform.rotation.w.ToString() + ")";
+    capsuleQuaternion.text = "Cuaternio de la figura: (" + capsule.transform.rotation.x.ToString() + "," + capsule.transform.rotation.y.ToString() + "," + capsule.transform.rotation.z.ToString() + "," + capsule.transform.rotation.w.ToString() + ")";
 }
