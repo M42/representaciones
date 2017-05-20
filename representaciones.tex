@@ -158,6 +158,45 @@ interés último será poder representar las rotaciones de este espacio
 de forma que simplifique nuestros cálculos al trabajar con
 ellas. Empezaremos estudiando las propiedades topológicas del grupo.
 
+\subsection{Ejes de rotación}
+En la siguiente proposición demostraremos que cualquier rotación deja
+una recta invariante, cuyos puntos se mantienen todos fijos tras
+aplicar la rotación. Llamaremos a esta recta el \textbf{eje de rotación}
+de la transformación.
+
+\begin{proposition}
+  Cada rotación de $SO(3)$ deja fija una recta.
+  % TODO: Aquí hay existencia y unicidad, ¿no? Deja fija exactamente a una recta.
+\end{proposition}
+
+\begin{proof}
+  Sea $ M \in SO(3)$ una rotación. Comprobaremos que la matriz tiene
+  al $1$ como valor propio, lo que nos dará un subespacio de al menos
+  dimensión 1 cuyos puntos se mantendrán fijos por $M$.
+
+  Que el $1$ sea valor propio equivale a que $\mathrm{det}(M-I_3)=0$.
+  Si desarrollamos la expresión sabiendo que $M^t = M^{-1}$ obtenemos
+  \[\begin{aligned}
+    \mathrm{det}(M - I_3) &=
+    \mathrm{det}((M - I_3)^t) \mathrm{det}(M^t - I_3) =
+    \mathrm{det}(M^{-1} - I_3) =
+    \mathrm{det}(M^{-1}(I_3 - M)) =\\
+    &= \mathrm{det}(M^{-1}) * \mathrm{det}(I_3 - M) =
+    \mathrm{det}(I_3 - M) = -\mathrm{det}(M - I_3),
+  \end{aligned}\]
+  de donde se deduce directamente que $\mathrm{det}(M - I_3) = 0$ y que el $1$
+  es un valor propio de $M$.
+\end{proof}
+
+\begin{proposition}
+  Cada rotación de $SO(3)$ está determinada de manera única por un
+  eje de rotación y un ángulo. Podemos notar así a cada rotación por
+  $\mathbf{R}_{\alpha,u}$, donde $\alpha$ es el ángulo de rotación y $u$
+  un vector unitario determinando el eje de rotación.
+\end{proposition}
+% TODO: Esto habría que escribirlo junto a lo anterior.
+% TODO: Escribir demostración.
+
 \subsection{Propiedades topológicas de las rotaciones}
 \begin{proposition}
   El grupo $SO(3)$, con la topología inducida desde la topología usual
@@ -184,36 +223,6 @@ ellas. Empezaremos estudiando las propiedades topológicas del grupo.
 
 De este resultado se deduce que $SO(3)$ es \textit{conexo} y que tiene un grupo
 fundamental no trivial, no siendo, por tanto, \textit{simplemente conexo}.
-
-\subsection{Ejes de rotación}
-En la siguiente proposición demostraremos que cualquier rotación deja
-una recta invariante, cuyos puntos se mantienen todos fijos tras
-aplicar la rotación. Llamaremos a esta recta el \textbf{eje de rotación}
-de la transformación.
-
-\begin{proposition}
-  Cada rotación de $SO(3)$ deja fija una recta.
-  % Aquí hay existencia y unicidad, ¿no?
-\end{proposition}
-
-\begin{proof}
-  Sea $ M \in SO(3)$ una rotación. Comprobaremos que la matriz tiene
-  al $1$ como valor propio, lo que nos dará un subespacio de al menos
-  dimensión 1 cuyos puntos se mantendrán fijos por $M$.
-
-  Que el $1$ sea valor propio equivale a que $\mathrm{det}(M-I_3)=0$.
-  Si desarrollamos la expresión sabiendo que $M^t = M^{-1}$ obtenemos
-  \[\begin{aligned}
-    \mathrm{det}(M - I_3) &=
-    \mathrm{det}((M - I_3)^t) \mathrm{det}(M^t - I_3) =
-    \mathrm{det}(M^{-1} - I_3) =
-    \mathrm{det}(M^{-1}(I_3 - M)) =\\
-    &= \mathrm{det}(M^{-1}) * \mathrm{det}(I_3 - M) =
-    \mathrm{det}(I_3 - M) = -\mathrm{det}(M - I_3),
-  \end{aligned}\]
-  de donde se deduce directamente que $\mathrm{det}(M - I_3) = 0$ y que el $1$
-  es un valor propio de $M$.
-\end{proof}
 
 
 \section{Ángulos de Euler}
@@ -281,7 +290,6 @@ de los ejes de rotación. Esto ocurre naturalmente bajo ciertas
 combinaciones en los ángulos de rotación, que provocan que el primero
 de los ejes quede alineado con el tercero.
 
-%% TODO: Imagen del bloqueo del cardán en Unity
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=90mm]{cardan.jpg}
