@@ -214,12 +214,12 @@ de la transformación.
 \begin{proof}
   Consideramos una bola cerrada en $\mathbb R^3$ de radio $\pi$,
   $\mathbb B = \overline{B(0, \pi)}$. Asignamos a cada punto $x \in \mathbb B$
-  una rotación, con eje la recta que une el origen y $x$, y ángulo de
-  rotación $\alpha = d(x, O)$ la distancia con signo al origen. De
+  una rotación, con eje orientado la recta que une el origen y $x$, y ángulo de
+  rotación $\alpha = d(x, O)$ la distancia al origen, en el sentido del eje. De
   esta forma, cada punto representa una única rotación, salvo los
   puntos antípoda de la esfera, a los que corresponden las rotaciones de ángulos
-  $\pi$ y $-\pi$, que son la misma. Esto nos lleva a identificar los
-  puntos antípoda de $\partial \mathbb B$, lo que establece un
+  $\pi$ en ambas orientaciones del eje, que son la misma. Esto nos lleva a identificar
+  los puntos antípoda de $\partial \mathbb B$, lo que establece un
   homeomorfismo entre $SO(3)$ y $\mathbb{RP}^3$.
 \end{proof}
 
@@ -482,12 +482,12 @@ vector.
   \[\mathbf{R}_{\gamma,c} =\mathbf{R}_{\alpha,a}\mathbf{R}_{\beta,b}\]
   tiene una solución con
   \[\begin{aligned}
-    \cos \frac{1}{2}\gamma &=
-    \cos \frac{1}{2}\alpha \cos\frac{1}{2}\beta - \sin\frac{1}{2}\alpha\sin\frac{1}{2}\beta (a\cdot b)\\
-    c \sin \frac{1}{2}\gamma &=
-    \sin \frac{1}{2}\alpha \cos\frac{1}{2}\beta a +
-    \cos \frac{1}{2}\alpha \sin\frac{1}{2}\beta b +
-    \sin \frac{1}{2}\alpha \sin\frac{1}{2}\beta (a \times b)
+    \cos \frac{\gamma}{2} &=
+    \cos \frac{\alpha}{2} \cos\frac{\beta}{2} - \sin\frac{\alpha}{2}\sin\frac{\beta}{2} (a\cdot b)\\
+    c \sin \frac{\gamma}{2} &=
+    \sin \frac{\alpha}{2} \cos\frac{\beta}{2} a +
+    \cos \frac{\alpha}{2} \sin\frac{\beta}{2} b +
+    \sin \frac{\alpha}{2} \sin\frac{\beta}{2} (a \times b)
   \end{aligned}\]
   donde notamos el producto escalar como $a\cdot b$ y el producto vectorial como $a \times b$.
   \cite{vince11}
@@ -500,21 +500,21 @@ rotaciones.
 
 Sean los versores dados por
 \[
-  q_a = \cos \frac{1}{2} \alpha + a \sin \frac{1}{2} \alpha,
+  q_a = \cos \frac{\alpha}{2}  + a \sin \frac{\alpha}{2} ,
   \qquad
-  q_b = \cos \frac{1}{2} \beta + b \sin \frac{1}{2} \beta,
+  q_b = \cos \frac{\beta}{2} + b \sin \frac{\beta}{2},
   \qquad
-  q_c = \cos \frac{1}{2} \gamma + c \sin \frac{1}{2} \gamma.
+  q_c = \cos \frac{\gamma}{2}  + c \sin \frac{\gamma}{2} .
 \]
 entonces el desarrollo del producto acaba resultando en la fórmula de
 Rodrigues con la misma solución
 \[\begin{aligned}
-    \cos \frac{1}{2}\gamma &=
-    \cos \frac{1}{2}\alpha \cos\frac{1}{2}\beta - \sin\frac{1}{2}\alpha\sin\frac{1}{2}\beta (a\cdot b)\\
-    c\sin \frac{1}{2}\gamma &=
-    \sin \frac{1}{2}\alpha \cos\frac{1}{2}\beta a +
-    \cos \frac{1}{2}\alpha \sin\frac{1}{2}\beta b +
-    \sin \frac{1}{2}\alpha \sin\frac{1}{2}\beta (a \times b).
+    \cos \frac{\gamma}{2} &=
+    \cos \frac{\alpha}{2} \cos\frac{1}{2}\beta - \sin\frac{1}{2}\alpha\sin\frac{\beta}{2} (a\cdot b)\\
+    c\sin \frac{\gamma}{2} &=
+    \sin \frac{\alpha}{2} \cos\frac{\beta}{2} a +
+    \cos \frac{\alpha}{2} \sin\frac{\beta}{2} b +
+    \sin \frac{\alpha}{2} \sin\frac{\beta}{2} (a \times b).
   \end{aligned}\]
 
 \subsection{Rotación con cuaternios}
@@ -523,7 +523,7 @@ $V \cong \mathbb{R}^3$ usando cuaternios. La rotación que intentaremos
 resolver será de ángulo $\alpha$ y tendrá como eje de rotación el dado
 por el vector unitario $u$. Comprobaremos que para rotar un vector $p$
 habrá que tomar el cuaternio
-\[q = \cos \frac{1}{2}\alpha + u \sin \frac{1}{2}\alpha\]
+\[q = \cos \frac{\alpha}{2} + u \sin \frac{\alpha}{2}\]
 y conjugar el vector sobre él, como $R_{\alpha,u}(p) = qpq^\ast $.
 
 \begin{proposition}
