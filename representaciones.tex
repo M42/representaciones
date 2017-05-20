@@ -611,7 +611,8 @@ Sean $a,b,p,q$ cuatro cuaternios, vistos como vértices entre los que
 realizaremos la interpolación cúbica. La idea es interpolar un punto
 $c$ entre $p$ y $q$ mientras que, a la vez, interpolamos un $d$ entre
 $a$ y $b$; finalmente, interpolamos con una fórmula cuadrática entre
-los puntos de las interpolaciones previas $d$ y $c$.
+los puntos de las interpolaciones previas $d$ y $c$. Definimos la
+interpolación Squad como
 \[
   \mathrm{Squad}(p,q,a,b;t) =
   \mathrm{Slerp}(\mathrm{Slerp}(p,q;t), \mathrm{Slerp}(a,b;t); 2t(1-t)).
