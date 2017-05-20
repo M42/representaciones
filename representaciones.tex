@@ -168,7 +168,6 @@ de la transformación.
   Cada rotación de $SO(3)$ deja fija una recta.
   % TODO: Aquí hay existencia y unicidad, ¿no? Deja fija exactamente a una recta.
 \end{proposition}
-
 \begin{proof}
   Sea $ M \in SO(3)$ una rotación. Comprobaremos que la matriz tiene
   al $1$ como valor propio, lo que nos dará un subespacio de al menos
@@ -194,8 +193,14 @@ de la transformación.
   $\mathbf{R}_{\alpha,u}$, donde $\alpha$ es el ángulo de rotación y $u$
   un vector unitario determinando el eje de rotación.
 \end{proposition}
-% TODO: Esto habría que escribirlo junto a lo anterior.
-% TODO: Escribir demostración.
+\begin{proof}
+  Hemos probado anteriormente que cada rotación deja fijo un eje. Si
+  proyectamos perpendicularmente a él, nos queda una rotación en el
+  plano, que está determinada de forma única por un ángulo. Nótese que
+  si existiera otro eje de rotación, debería permanecer fija su
+  proyección al plano, pero los giros no triviales en el plano no
+  dejan ningún eje fijo.
+\end{proof}
 
 \subsection{Propiedades topológicas de las rotaciones}
 \begin{proposition}
