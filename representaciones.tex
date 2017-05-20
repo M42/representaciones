@@ -21,6 +21,10 @@
 \usepackage[utf8]{inputenc}
 \selectlanguage{spanish}
 
+% fuente mono
+\usepackage{fontspec}
+\setmonofont{Inconsolata}
+
 % Matemáticas
 \usepackage{amsthm}
 \usepackage{amsfonts}
@@ -36,6 +40,8 @@
 \theoremstyle{remark}
 \newtheorem*{remark}{Nota}
 \renewcommand*{\proofname}{Demostración}
+
+\usepackage{minted}
 
 % Corrige el espacio previo a las definiciones
 \makeatletter
@@ -657,9 +663,13 @@ Unity \cite{unity} es un motor de gráficos tridimensionales que incorpora funci
 
 \subsection{Cardán con Unity}
 
-Se ha desarrollado un ejemplo de rotación con ángulos de Euler utilizando este motor gráfico. El programa muestra tres rotores correspondientes a cada eje, jerarquizados 
+Se ha desarrollado un ejemplo de rotación con ángulos de Euler utilizando este motor gráfico. El programa muestra tres rotores correspondientes a cada eje, jerarquizados de mayor a menor.
+
+\input{euler.tex}
 
 \subsection{Uso de cuaternios}
+
+\input{cuaternios.tex}
 
 \section{Referencias}
 % https://en.wikipedia.org/wiki/Euler_angles
@@ -689,3 +699,4 @@ Se ha desarrollado un ejemplo de rotación con ángulos de Euler utilizando este
 \end{thebibliography}
 
 \end{document}
+A

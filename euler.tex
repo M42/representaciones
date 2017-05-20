@@ -1,0 +1,25 @@
+\begin{minted}{javascript}
+var xRotor : GameObject;
+var yRotor : GameObject;
+var zRotor : GameObject;
+
+var xRotation : Quaternion;
+var yRotation : Quaternion;
+var zRotation : Quaternion;
+
+// ...
+
+if (gameobject.name == xRotor.name) {
+    Debug.Log("X: "+xRotor.transform.rotation);
+    rotx += sign * speed;
+    xRotor.transform.rotation = xRotation * Quaternion.Euler(0,rotx,0);
+} else if (gameobject.name == yRotor.name) {
+    Debug.Log("Y: "+yRotor.transform.rotation);
+    roty += sign * speed;
+    yRotor.transform.rotation = yRotation * Quaternion.Euler(0,roty,0);
+} else if (gameobject.name == zRotor.name) {
+    Debug.Log("Z: "+zRotor.transform.rotation);
+    rotz += sign * speed;
+    zRotor.transform.rotation = zRotation * Quaternion.Euler(0,rotz,0);
+}
+\end{minted}

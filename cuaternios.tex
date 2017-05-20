@@ -1,0 +1,18 @@
+\begin{minted}{javascript}
+var t : float;
+var capsule : GameObject;
+
+// ...
+
+if (enable_anim) {
+    // update animation
+    t += 0.025;
+    capsule.transform.rotation = Quaternion.Slerp(initial, end, t);
+
+    // stop animation when finished
+    if (t >= 1) {
+      enable_anim = false;
+      t = 0;
+    }
+  }
+\end{minted}
