@@ -133,7 +133,7 @@
 \end{definition}
 
 Nótese que las matrices ortogonales forman un subgrupo del grupo
-lineal $GL(n)$ de matrices invertibles; y que, por definición, sólo
+lineal $GL(n)$ de matrices invertibles; y que, como consecuencia de la definición, sólo
 pueden tener determinante $1$ y $-1$. Las matrices ortogonales dentro
 de $GL(n)$ representan las \textit{isometrías} dentro del grupo de isomorfismos.
 
@@ -141,7 +141,7 @@ de $GL(n)$ representan las \textit{isometrías} dentro del grupo de isomorfismos
   Llamamos $SO(n)$ al \textbf{subgrupo de rotaciones}, definido como
   el subgrupo de $O(n)$ formado por aquellas matrices que tienen
   determinante $1$. Es decir,
-  \[SO(n) = \left\{ M \in O(n) \mid MM^t = M^tM = I_n \right\}.\]
+  \[SO(n) = \left\{ M \in O(n) \mid \mathrm{det}(M)=1 \right\}.\]
 \end{definition}
 
 En este texto estudiaremos $SO(3)$, las rotaciones del espacio
@@ -158,12 +158,12 @@ ellas. Empezaremos estudiando las propiedades topológicas del grupo.
   $\mathbb{RP}^3$.
 \end{proposition}
 \begin{proof}
-  Consideramos una esfera en $\mathbb R^3$ de radio $\pi$,
+  Consideramos una bola en $\mathbb R^3$ de radio $\pi$,
   $\mathbb B = B(0, \pi)$. Asignamos a cada punto $x \in \mathbb B$
   una rotación, con eje la recta que une el origen y $x$, y ángulo de
   rotación $\alpha = d(x, O)$ la distancia con signo al origen. De
   esta forma, cada punto representa una única rotación, salvo los
-  puntos antípoda, a los que corresponden las rotaciones de ángulos
+  puntos antípoda de la esfera, a los que corresponden las rotaciones de ángulos
   $\pi$ y $-\pi$, que son la misma. Esto nos lleva a identificar los
   puntos antípoda de $\partial \mathbb B$, lo que establece un
   homeomorfismo entre $SO(3)$ y $\mathbb{RP}^3$.
@@ -205,7 +205,7 @@ de la transformación.
     \mathrm{det}(I_3 - M) = -\mathrm{det}(M - I_3),
   \end{aligned}\]
   de donde se deduce directamente que $\mathrm{det}(M - I_3) = 0$ y que el $1$
-  es un autovalor de $M$.
+  es un valor propio de $M$.
 \end{proof}
 
 
@@ -286,8 +286,8 @@ fundamental del 3-espacio proyectivo es
 $\pi(\mathbb{RP}^3, x) \simeq \mathbb Z_2$. Como el grupo fundamental
 de un recubridor debe ser subgrupo del grupo fundamental del espacio
 reducido, deducimos que no puede haber un recubrimiento. De hecho,
-como $Z_2$ no tiene subgrupos propios, los posibles espacios
-recubridores deben tener grupo fundamental $Z_2$ o ser simplemente
+como $\mathbb Z_2$ no tiene subgrupos propios, los posibles espacios
+recubridores deben tener grupo fundamental $\mathbb Z_2$ o ser simplemente
 conexos.
 
 \section{Cuaternios}
@@ -312,7 +312,7 @@ espacio $V$ visto como $\mathbb{R}^3$. A un cuaternio así escrito se le llama
 \textbf{versor}.
 \end{proposition}
 \begin{proof}
-  Si tenemos $q = a + bv$ con $v$ unitario, sabemos que $v^2 = - v(-v) = - vv^\ast = 1$.
+  Si tenemos $q = a + bv$ con $v$ unitario, sabemos que $v^2 = - v(-v) = - vv^\ast = -1$.
   Entonces, si $q$ es unitario,
   \[
     1 = qq^\ast = (a+bv)(a-bv) = a^2 + b^2.
