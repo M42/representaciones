@@ -669,30 +669,34 @@ y permite representar las rotaciones mediante cuaternios.
 Se ha desarrollado un ejemplo de rotación con ángulos de Euler utilizando este
 motor gráfico. El programa muestra tres rotores correspondientes a cada eje,
 jerarquizados de mayor a menor, del cual depende una figura. Permite
-hacer uso de el ratón como dispositivo de entrada para que el usuario interactúe
+hacer uso del ratón como dispositivo de entrada para que el usuario interactúe
 con la escena planteada, con el objetivo de llegar a una situación en la que se
-da el bloqueo de Cardán, una vez llegados a este punto el usuario puede
-interactuar con la esfera que aparece en la escena para realizar una
-interpolación esférica (SLERP).
+da el bloqueo de cardán.
+
+Las siguientes líneas de código son parte del programa encargado de reconocer la
+entrada del usuario y girar los rotores de acuerdo con sus ejes:
 
 \input{euler.tex}
 
-El script que permite el uso del ratón en el sistema es capaz de diferenciar que
-rotor se ha pulsado, a partir de aquí es necesario rotarlos y mantener su
-posición una vez se vuelva a pulsar en ellos, para ello se hace la composición
-de las rotaciones generadas por el cuaternión actual del eje pulsado con el
-cuaternión generado por la rotación del ángulo que viene determinado por el
-tiempo en el que se pulse alguno de los botones del ratón.
+El guion anterior, que permite el uso del ratón en el sistema, es capaz de diferenciar qué
+rotor se ha pulsado. Con dicha información, es capaz de rotarlos y mantener su
+posición una vez se deje de pulsar en ellos. De esta forma, para una nueva pulsación
+se realizará la composición de las rotaciones generadas por el cuaternión almacenado con el
+generado por la nueva rotación, de ángulo determinado por el
+tiempo durante el que se pulse alguno de los botones del ratón.
 
 \subsection{Uso de cuaternios}
 
-En el programa se hace uso de los cuaternios para representar la rotación de una
-determinada figura en el espacio, además están definidos los operadores que nos
+En el programa se hace uso de los cuaternios para representar la rotación de cada una de las
+figuras en el espacio, y además están definidos los operadores que nos
 permiten compararlos y componer rotaciones. Para resolver la situación de
-bloqueo de Cardán se ha desarrollado un script que dados dos cuaterniones
-realiza la interpolación esférica de uno a otro, esto afectará a la escena
-haciendo que la figura salga del control de los ejes que bloquean el giro y
-permitiendo a esta llegar a la situación deseada a través del camino más corto.
+bloqueo de cardán, se ha desarrollado un guion que realiza la interpolación esférica SLERP
+entre dos cuaterniones dados. Esto afecta a la escena
+liberando a la figura del control de los ejes que bloquean el giro y
+permitiéndole llegar a la situación deseada a través del camino más corto.
+
+A continuación reproducimos la sección de código donde se realiza la animación
+correspondiente a la interpolación esférica, una vez activada, y hasta su finalización:
 
 \input{cuaternios.tex}
 
