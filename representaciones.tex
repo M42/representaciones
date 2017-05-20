@@ -158,8 +158,8 @@ ellas. Empezaremos estudiando las propiedades topológicas del grupo.
   $\mathbb{RP}^3$.
 \end{proposition}
 \begin{proof}
-  Consideramos una bola en $\mathbb R^3$ de radio $\pi$,
-  $\mathbb B = B(0, \pi)$. Asignamos a cada punto $x \in \mathbb B$
+  Consideramos una bola cerrada en $\mathbb R^3$ de radio $\pi$,
+  $\mathbb B = \overline{B(0, \pi)}$. Asignamos a cada punto $x \in \mathbb B$
   una rotación, con eje la recta que une el origen y $x$, y ángulo de
   rotación $\alpha = d(x, O)$ la distancia con signo al origen. De
   esta forma, cada punto representa una única rotación, salvo los
@@ -372,7 +372,7 @@ $x \in \mathbb R^4$ que verifican
 $\left|x\right| = 1 \implies SU(2) \cong S^3$. La aplicación definida
 en el teorema \ref{su2} nos da el isomorfismo entre los dos espacios,
 que de hecho es un difeomorfismo, sin más que considerar el
-difeomorfismo entre $M_2(\mathbb C)$ y $R^8$ y restringir.
+difeomorfismo entre $M_2(\mathbb C)$ y $\mathbb R^8$ y restringir.
 
 % Cuaternios de SU(2)???
 
@@ -399,9 +399,9 @@ vector.
 \begin{theorem}
   \textbf{Fórmula de Rodrigues para la rotación.} Si llamamos
   $\mathbf{R}_{\alpha,u}$ a la rotación de ángulo $\alpha$ sobre el
-  eje dado por un vector no nulo $a$, la rotación de un vector
+  eje dado por un vector no nulo $u$, la rotación de un vector
   $v \in\mathbb{R}^3$ se calcula como
-  \[R_{\alpha,a}v = v \cos \alpha + (u \times v)\sin \alpha + u(u\cdot v)(1-\cos\alpha).\]
+  \[\mathbf{R_{\alpha,u}}v = v \cos \alpha + (u \times v)\sin \alpha + u(u\cdot v)(1-\cos\alpha).\]
 \end{theorem}
 \begin{proof}
   El vector $v$ podemos descomponerlo en su componente paralela y su
@@ -482,7 +482,7 @@ O, si la escribimos tomando un cuaternio unitario
 \[
   q = \cos \frac{\alpha}{2} + u \sin \frac{\alpha}{2},
 \]
-tenemos que $\mathbf{R}p = qpq^\ast $.
+tenemos que $\mathbf{R}_{\alpha,u}p = qpq^\ast $.
 \end{proposition}
 \begin{proof}
   Simplemente desarrollando
@@ -582,7 +582,7 @@ los puntos de las interpolaciones previas $d$ y $c$.
   John Vince (2011),
   Quaternions for Computer Graphics,
   Springer-Verlag London.
-  
+
 \end{thebibliography}
 
 \end{document}
