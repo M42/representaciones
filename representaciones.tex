@@ -213,12 +213,12 @@ de la transformación.
 \begin{proof}
   Consideramos una bola cerrada en $\mathbb R^3$ de radio $\pi$,
   $\mathbb B = \overline{B(0, \pi)}$. Asignamos a cada punto $x \in \mathbb B$
-  una rotación, con eje la recta que une el origen y $x$, y ángulo de
-  rotación $\alpha = d(x, O)$ la distancia con signo al origen. De
-  esta forma, cada punto representa una única rotación, salvo los
+  una rotación, con eje orientado la recta que une el origen y $x$, y ángulo de
+  rotación $\alpha = d(x, O)$ en el sentido del eje.
+  De esta forma, cada punto representa una única rotación, salvo los
   puntos antípoda de la esfera, a los que corresponden las rotaciones de ángulos
-  $\pi$ y $-\pi$, que son la misma. Esto nos lleva a identificar los
-  puntos antípoda de $\partial \mathbb B$, lo que establece un
+  $\pi$ en ambas orientaciones del eje, que son la misma. Esto nos lleva a identificar
+  los puntos antípoda de $\partial \mathbb B$, lo que establece un
   homeomorfismo entre $SO(3)$ y $\mathbb{RP}^3$.
 \end{proof}
 
@@ -230,11 +230,12 @@ fundamental no trivial, no siendo, por tanto, \textit{simplemente conexo}.
 \section{Ángulos de Euler}
 \subsection{Definición}
 
-Se conoce como sistema de los \textbf{ángulos de Euler} al que utiliza
-tres ángulos para describir la orientación de un objeto respecto a un
-sistema de coordenadas fijo en el espacio. Análogamente, podemos no
-considerar como fijo el sistema de coordenadas y ver los ángulos de
-Euler como una orientación de dicho sistema. %???
+\begin{definition}
+  Se conoce como sistema de los \textbf{ángulos de Euler} al que
+  utiliza tres ángulos de rotación sobre los ejes cartesianos para
+  describir la orientación de un objeto respecto a un sistema de
+  coordenadas fijo en el espacio.
+\end{definition}
 
 La forma tradicional de usar rotaciones en el espacio se basa en el
 uso de las llamadas \textit{rotaciones de Euler}, que combinan hasta tres
@@ -246,6 +247,29 @@ ordenaciones posibles usando los tres índices, además de aquellas seis
 en las que aparece el mismo eje al principio y al final, y uno de los
 dos restantes en la posición central. % ¿Qué son exactamente las rotaciones de Euler?
 
+\[
+\begin{aligned}
+\mathbf{R}_{\theta,x}\mathbf{R}_{\phi,y}\mathbf{R}_{\psi,z}, \quad
+\mathbf{R}_{\theta,x}\mathbf{R}_{\psi, z}\mathbf{R}_{\phi,y}, \quad
+\mathbf{R}_{\phi, y}\mathbf{R}_{\theta, x}\mathbf{R}_{\psi,z} \\
+\mathbf{R}_{\phi, y}\mathbf{R}_{\psi,z}\mathbf{R}_{\theta,x}, \quad
+\mathbf{R}_{\psi, z}\mathbf{R}_{\theta, x}\mathbf{R}_{\phi, y}, \quad
+\mathbf{R}_{\psi, z}\mathbf{R}_{\phi,y}\mathbf{R}_{\theta, x}
+\end{aligned}
+\]
+
+
+\[
+\begin{aligned}
+\mathbf{R}_{\theta,x}\mathbf{R}_{\phi,y}\mathbf{R}_{\theta,x}, \quad
+\mathbf{R}_{\theta,x}\mathbf{R}_{\psi, z}\mathbf{R}_{\theta, x}, \quad
+\mathbf{R}_{\phi, y}\mathbf{R}_{\theta, x}\mathbf{R}_{\phi, y}, \\
+\mathbf{R}_{\phi, y}\mathbf{R}_{\psi,z}\mathbf{R}_{\phi,y}, \quad
+\mathbf{R}_{\psi, z}\mathbf{R}_{\theta,x}\mathbf{R}_{\psi,z}, \quad
+\mathbf{R}_{\psi,z}\mathbf{R}_{\phi,y}\mathbf{R}_{\psi,z}
+\end{aligned}
+\]
+
 % Faltaría una definición más formal de ángulos de Euler.
 
 \subsection{Descomposición}
@@ -254,7 +278,7 @@ dos restantes en la posición central. % ¿Qué son exactamente las rotaciones d
 % ¿La unicidad la tenemos?
 
 Cada rotación se descompone en sus tres rotaciones de Euler de forma
-única.  En la siguiente fórmula escribimos las matrices de rotación
+única. En la siguiente fórmula escribimos las matrices de rotación
 respecto a los ejes cartesianos, de forma que la primera es la
 rotación de ángulo $\psi$ sobre el eje $z$, la segunda rota $\phi$
 grados sobre el eje $y$, y la tercera la que rota $\theta$ grados con
@@ -281,9 +305,11 @@ antihorario.  \footnote{Para cambiar el sentido no hay más que
   \end{pmatrix}
 \]
 
+\subsection{Propiedades topológicas de los ángulos de Euler}
+
 Podemos ver el espacio de los ángulos de Euler como el 3-toro
-$\mathbb T^3$, sin más que identificar cada variable de giro en una
-dimensión del toro.
+$\mathbb T^3$, sin más que identificar cada uno de los tres ángulos
+en una dimensión del toro. 
 
 % https://es.wikipedia.org/wiki/Teorema_de_rotaci%C3%B3n_de_Euler
 
@@ -368,7 +394,7 @@ espacio $V$ visto como $\mathbb{R}^3$. A un cuaternio así escrito se le llama
 \end{proof}
 
 \subsection{Conexión con SU(2)}
-\cite{gelfand63}
+
 % https://en.wikipedia.org/wiki/Rotation_group_SO(3)#Connection_between_SO.283.29_and_SU.282.29
 
 \begin{definition}
@@ -410,7 +436,7 @@ $\mathbb{R}^4$.
 
 
 \subsection{Cuaternios como esfera de dimensión 4}
-Cuando interpretamos los cuaternios como matrices complejas de dimensiones
+Si interpretamos los cuaternios como matrices complejas de dimensiones
 $2 \times 2$, como
 \[
   1 \mapsto \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix},\quad
@@ -418,13 +444,17 @@ $2 \times 2$, como
   j \mapsto \begin{pmatrix} 0 & 1 \\-1 & 0 \end{pmatrix},\quad
   k \mapsto \begin{pmatrix} 0 & i \\ i & 0 \end{pmatrix},\quad
 \]
-junto con la condición obtenida anteriormente, $a^2+b^2+c^2+d^2 = 1$,
-podemos ver los cuaternios unitarios como los elementos de $SU(2)$.
-Estos son, a su vez, vectores unitarios de $\mathbb{R}^4$, teniéndose
+tenemos que podemos expresar cualquier elemento de $SU(2)$ como
+$a + bi + cj + dk$ para $a,b,c,d \in \mathbb{R}$ cumpliendo
+$a^2+b^2+c^2+d^2 = 1$. Pero además, dado un cuaternio $a + bi + cj + dk$,
+que sea unitario equivale a
+\[a^2+b^2+c^2+d^2 = (a+bi+cj+dk)(a-bi-cj-dk) = 1,\]
+luego los cuaternios unitarios son los elementos de $SU(2)$.
+A su vez, por lo comprobado anteriormente, los elementos de
+$SU(2)$ son vectores unitarios de $\mathbb{R}^4$, teniéndose
 que $SU(2) \cong S^3$. La aplicación definida
 en el teorema \ref{su2} nos da el isomorfismo entre los dos espacios.
-
-% Cuaternios de SU(2)???
+\cite{gelfand63}
 
 \subsection{Recubrimiento del grupo de rotaciones}
 
@@ -578,8 +608,11 @@ $p$ y un parámetro de interpolación $t$, buscamos un camino continuo
 que interpole $p$ desde $q_1$, cuando $t=0$, hasta $q_2$, cuando
 $t=1$.
 
-Para calcular la rotación interpolada, usamos la fórmula \cite{vince11}
-\[q' = q_1(q_1^{-1}q_2)^t \qquad\text{ para } t \in [0,1].\]
+\begin{definition}
+  Para calcular la rotación interpolada, usamos la fórmula \cite{vince11}
+  siguiente, con la que definimos el método \textbf{Slerp}
+  \[\mathrm{Slerp}(p,q;t) = p(p^{-1}q)^t \qquad\text{ para } t \in [0,1].\]
+\end{definition}
 
 Cuando interpolamos usando SLERP, la interpolación de cuaternios
 induce a su vez una interpolación en las rotaciones tridimensionales,
@@ -589,7 +622,8 @@ de un eje fijo.
 
 Sin embargo, como el recubrimiento es doble, el camino de rotaciones
 puede ser doble y ser o bien el camino más corto, o bien el camino más
-largo.
+largo; se debe elegir un criterio para el signo de los ángulos si
+queremos asegurarnos de que usa siempre el camino más corto.
 
 % http://number-none.com/product/Understanding%20Slerp,%20Then%20Not%20Using%20It/
 % https://www.geometrictools.com/Documentation/Quaternions.pdf
@@ -601,16 +635,18 @@ similar al método de De Casteljau para el cálculo de curvas de Bézier,
 y proporciona una interpolación cúbica entre dos orientaciones
 parametrizada por otras dos.
 
+\begin{definition}
 Sean $a,b,p,q$ cuatro cuaternios, vistos como vértices entre los que
 realizaremos la interpolación cúbica. La idea es interpolar un punto
 $c$ entre $p$ y $q$ mientras que, a la vez, interpolamos un $d$ entre
 $a$ y $b$; finalmente, interpolamos con una fórmula cuadrática entre
-los puntos de las interpolaciones previas $d$ y $c$.
+los puntos de las interpolaciones previas $d$ y $c$. Definimos la
+interpolación \textbf{Squad} como
 \[
   \mathrm{Squad}(p,q,a,b;t) =
   \mathrm{Slerp}(\mathrm{Slerp}(p,q;t), \mathrm{Slerp}(a,b;t); 2t(1-t)).
 \]
-
+\end{definition}
 % http://run.usc.edu/cs520-s13/assign2/p245-shoemake.pdf
 
 \section{Realización práctica}
