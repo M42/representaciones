@@ -583,7 +583,7 @@ $t=1$.
 
 \begin{definition}
   Para calcular la rotación interpolada, usamos la fórmula \cite{vince11}
-  siguiente, con la que definimos el método \textbf{SLERP}
+  siguiente, con la que definimos el método \textbf{Slerp}
   \[\mathrm{Slerp}(p,q;t) = p(p^{-1}q)^t \qquad\text{ para } t \in [0,1].\]
 \end{definition}
 
@@ -595,7 +595,8 @@ de un eje fijo.
 
 Sin embargo, como el recubrimiento es doble, el camino de rotaciones
 puede ser doble y ser o bien el camino más corto, o bien el camino más
-largo.
+largo; se debe elegir un criterio para el signo de los ángulos si
+queremos asegurarnos de que usa siempre el camino más corto.
 
 % http://number-none.com/product/Understanding%20Slerp,%20Then%20Not%20Using%20It/
 % https://www.geometrictools.com/Documentation/Quaternions.pdf
@@ -613,7 +614,7 @@ realizaremos la interpolación cúbica. La idea es interpolar un punto
 $c$ entre $p$ y $q$ mientras que, a la vez, interpolamos un $d$ entre
 $a$ y $b$; finalmente, interpolamos con una fórmula cuadrática entre
 los puntos de las interpolaciones previas $d$ y $c$. Definimos la
-interpolación Squad como
+interpolación \textbf{Squad} como
 \[
   \mathrm{Squad}(p,q,a,b;t) =
   \mathrm{Slerp}(\mathrm{Slerp}(p,q;t), \mathrm{Slerp}(a,b;t); 2t(1-t)).
