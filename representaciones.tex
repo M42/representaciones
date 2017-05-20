@@ -583,8 +583,11 @@ $p$ y un parámetro de interpolación $t$, buscamos un camino continuo
 que interpole $p$ desde $q_1$, cuando $t=0$, hasta $q_2$, cuando
 $t=1$.
 
-Para calcular la rotación interpolada, usamos la fórmula \cite{vince11}
-\[q' = q_1(q_1^{-1}q_2)^t \qquad\text{ para } t \in [0,1].\]
+\begin{definition}
+  Para calcular la rotación interpolada, usamos la fórmula \cite{vince11}
+  siguiente, con la que definimos el método \textbf{SLERP}
+  \[\mathrm{Slerp}(p,q;t) = p(p^{-1}q)^t \qquad\text{ para } t \in [0,1].\]
+\end{definition}
 
 Cuando interpolamos usando SLERP, la interpolación de cuaternios
 induce a su vez una interpolación en las rotaciones tridimensionales,
