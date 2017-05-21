@@ -18,11 +18,11 @@ graphics: true
 classoption:
   - compress
 header-includes:
-- "\\RequirePackage[outputdir=out,cache=false]{minted}"
 - \newcommand{\columnsbegin}{\begin{columns}}
 - \newcommand{\columnsend}{\end{columns}}
 - \definecolor{headbg}{RGB}{61, 96, 103}
 - \definecolor{headfg}{RGB}{232, 239, 241}
+- \definecolor{lightgrey}{RGB}{230, 230, 230}
 - \setbeamercolor{headtitle}{fg=headfg,bg=headbg}
 - \setbeamercolor{headnav}{fg=headfg,bg=headbg}
 - \setbeamercolor{section in head/foot}{fg=headfg,bg=headbg}
@@ -192,9 +192,20 @@ espacio $V$ visto como $\mathbb{R}^3$. A un cuaternio así escrito se le llama
 
 ## Cuaternios como esfera 4-dimensional
 
+Expresando
+\begin{align*}
+  1 \mapsto \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix},&\quad
+  i \mapsto \begin{pmatrix} i & 0 \\ 0 &-i \end{pmatrix},\\
+  j \mapsto \begin{pmatrix} 0 & 1 \\-1 & 0 \end{pmatrix},&\quad
+  k \mapsto \begin{pmatrix} 0 & i \\ i & 0 \end{pmatrix},
+\end{align*}
+podemos ver cualquier elemento de $SU(2)$ como un cuaternio unitario:
+$a + bi + cj + dk$ para $a,b,c,d \in \mathbb{R}$ cumpliendo $a^2+b^2+c^2+d^2 = 1$,
+y viceversa. Así, $SU(2)\cong S^3$
+
 ## Recubrimiento del grupo de rotaciones
 
-- $S^3$ es un recubridor de dos hojas de $\mathbb{RP}^3$ (de hecho, es su recubridor universal).
+$S^3$ es un recubridor de dos hojas de $\mathbb{RP}^3$ (de hecho, es su recubridor universal) $\Rightarrow$ Los cuaternios unitarios recubren el espacio de rotaciones $SO(3)$.
 
 # Rotaciones con cuaternios
 
@@ -352,3 +363,31 @@ if (enable_anim) {
 ~~~
 
 \normalsize
+
+# Referencias
+## Referencias
+
+\begin{thebibliography}{9}
+
+\bibitem{gelfand63}
+  Gelfand, I.M.; Minlos, R.A.; Shapiro, Z.Ya. (1963),
+  Representations of the Rotation and Lorentz Groups and their Applications,
+  New York: Pergamon Press.
+
+\bibitem{vince11}
+  Vince, John (2011),
+  Quaternions for Computer Graphics,
+  Springer-Verlag London.
+
+\bibitem{aluffi07}
+  Aluffi, Paolo (2007),
+  Algebra: Chapter 0,
+  Graduate Studies in Mathematics. American Mathematical Society
+
+\bibitem{unity}
+  Unity Game Engine,
+  Sitio Oficial,
+  https://unity3d.com
+
+\end{thebibliography}
+
