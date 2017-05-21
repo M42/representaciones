@@ -331,7 +331,7 @@ de los ejes quede alineado con el tercero.
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=90mm]{cardan.jpg}
+\includegraphics[width=90mm]{./img/cardan.jpg}
 \caption{Bloqueo del cardán \label{figcardan}}
 \end{figure}
 
@@ -674,6 +674,12 @@ hacer uso del ratón como dispositivo de entrada para que el usuario interactúe
 con la escena planteada, con el objetivo de llegar a una situación en la que se
 da el bloqueo de cardán.
 
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=90mm]{./img/cardanflecha.png}
+\caption{Bloqueo del cardán con una figura no simétrica \label{figcardan}}
+\end{figure}
+
 Las siguientes líneas de código son parte del programa encargado de reconocer la
 entrada del usuario y girar los rotores de acuerdo con sus ejes:
 
@@ -695,6 +701,12 @@ bloqueo de cardán, se ha desarrollado un guion que realiza la interpolación es
 entre dos cuaterniones dados. Esto afecta a la escena
 liberando a la figura del control de los ejes que bloquean el giro y
 permitiéndole llegar a la situación deseada a través del camino más corto.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=90mm]{./img/slerp.png}
+\caption{Interpolación esférica completada \label{figcardan}}
+\end{figure}
 
 A continuación reproducimos la sección de código donde se realiza la animación
 correspondiente a la interpolación esférica, una vez activada, y hasta su finalización:
