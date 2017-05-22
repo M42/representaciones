@@ -209,7 +209,7 @@ $S^3$ es un recubridor de dos hojas de $\mathbb{RP}^3$ (de hecho, es su recubrid
 
 # Rotaciones con cuaternios
 
-## Fórmulas con cuaternios
+## Fórmulas de Rodrigues
 
 \begin{exampleblock}{Teorema}
 \textbf{Fórmula de Rodrigues para la rotación.} Si llamamos
@@ -219,7 +219,7 @@ $S^3$ es un recubridor de dos hojas de $\mathbb{RP}^3$ (de hecho, es su recubrid
   \[\mathbf{R_{\alpha,u}}v = v \cos \alpha + (u \times v)\sin \alpha + u(u\cdot v)(1-\cos\alpha).\]
 \end{exampleblock}
 
-## Fórmulas con cuaternios
+## Fórmulas de Rodrigues
 
 \begin{exampleblock}{Teorema}
   \textbf{Fórmula de Rodrigues para la composición.} Si llamamos
@@ -237,6 +237,26 @@ $S^3$ es un recubridor de dos hojas de $\mathbb{RP}^3$ (de hecho, es su recubrid
   \end{aligned}\] donde notamos el producto escalar como $a\cdot b$ y
   el producto vectorial como $a \times b$. \cite{vince11}
 \end{exampleblock}
+
+## Fórmulas con cuaternios
+
+Sean los versores dados por\begin{align*}
+  q_a = \cos \frac{\alpha}{2}  + a \sin \frac{\alpha}{2},\ 
+  q_b = \cos \frac{\beta}{2} + b \sin \frac{\beta}{2},\ 
+  q_c = \cos \frac{\gamma}{2}  + c \sin \frac{\gamma}{2}.
+\end{align*}
+
+Entonces, el desarrollo del producto acaba resultando en la fórmula de
+Rodrigues con la misma solución\begin{align*}
+    \cos \frac{\gamma}{2} &=
+    \cos \frac{\alpha}{2} \cos\frac{\beta}{2} - \sin\frac{\alpha}{2}\sin\frac{\beta}{2} (a\cdot b)\\
+    c\sin \frac{\gamma}{2} &=
+    \sin \frac{\alpha}{2} \cos\frac{\beta}{2} a +
+    \cos \frac{\alpha}{2} \sin\frac{\beta}{2} b +
+    \sin \frac{\alpha}{2} \sin\frac{\beta}{2} (a \times b),
+\end{align*}
+donde usamos que $vu = v \times u - v \cdot u$ para cuaternios puros $u,v$.
+
 
 ## Rotación con cuaternios
 
@@ -364,7 +384,8 @@ if (enable_anim) {
 
 \normalsize
 
-# Referencias
+# 
+
 ## Referencias
 
 \begin{thebibliography}{9}
